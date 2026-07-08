@@ -70,7 +70,7 @@ p {
 }
 
 /* ---------- BUTTONS ---------- */
-.action-btn {
+.cta-link {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -83,45 +83,45 @@ p {
   cursor: pointer;
 }
 
-.action-btn-primary {
+.cta-primary {
   background: var(--primary);
   color: #fff;
   border-color: var(--primary);
 }
-.action-btn-primary:hover {
+.cta-primary:hover {
   background: var(--primary-light);
   border-color: var(--primary-light);
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(26, 60, 94, 0.2);
 }
 
-.action-btn-outline {
+.cta-outline {
   background: transparent;
   color: #fff;
   border-color: #fff;
 }
-.action-btn-outline:hover {
+.cta-outline:hover {
   background: #fff;
   color: var(--primary);
 }
 
-.action-btn-secondary {
+.cta-secondary {
   background: var(--secondary);
   color: #fff;
   border-color: var(--secondary);
 }
-.action-btn-secondary:hover {
+.cta-secondary:hover {
   background: var(--secondary-light);
   border-color: var(--secondary-light);
   transform: translateY(-2px);
 }
 
-.action-btn-light {
+.cta-light {
   background: #fff;
   color: var(--primary);
   border-color: #fff;
 }
-.action-btn-light:hover {
+.cta-light:hover {
   background: var(--bg-light);
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
@@ -188,7 +188,7 @@ header {
   font-size: 0.9rem;
 }
 .menu-list a:hover,
-.menu-list a.active {
+.menu-list a.is-current {
   color: var(--primary);
   border-bottom-color: var(--secondary);
 }
@@ -494,7 +494,7 @@ footer {
   .hero {
     padding: 3rem 0 3.5rem;
   }
-  .hero-cta .action-btn {
+  .hero-cta .cta-link {
     width: 100%;
     justify-content: center;
   }
