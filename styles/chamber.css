@@ -39,7 +39,7 @@ ul {
   --bg-light: #f5f3ee;
   --text-dark: #1e1e1e;
   --text-muted: #4a4a4a;
-  --card-bg: #ffffff;
+  --panel-bg: #ffffff;
   --shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
   --radius: 12px;
 }
@@ -171,24 +171,24 @@ header {
   margin-left: 0.2rem;
 }
 
-.nav-links {
+.menu-list {
   display: flex;
   gap: 2rem;
   align-items: center;
 }
-.nav-links a {
+.menu-list a {
   font-weight: 500;
   padding: 0.4rem 0;
   border-bottom: 2px solid transparent;
   transition: border 0.2s, color 0.2s;
   color: var(--text-muted);
 }
-.nav-links a i {
+.menu-list a i {
   margin-right: 0.4rem;
   font-size: 0.9rem;
 }
-.nav-links a:hover,
-.nav-links a.active {
+.menu-list a:hover,
+.menu-list a.active {
   color: var(--primary);
   border-bottom-color: var(--secondary);
 }
@@ -242,22 +242,22 @@ header {
   margin-bottom: 3rem;
 }
 
-.card {
-  background: var(--card-bg);
+.panel {
+  background: var(--panel-bg);
   border-radius: var(--radius);
   padding: 1.8rem 1.5rem;
   box-shadow: var(--shadow);
   transition: transform 0.2s;
 }
-.card:hover {
+.panel:hover {
   transform: translateY(-4px);
 }
-.card-icon {
+.panel-icon {
   font-size: 2.2rem;
   color: var(--secondary);
   margin-bottom: 0.5rem;
 }
-.card h2 {
+.panel h2 {
   font-size: 1.3rem;
   margin-bottom: 0.5rem;
   color: var(--primary);
@@ -445,7 +445,7 @@ footer {
   .features-grid {
     grid-template-columns: 1fr 1fr;
   }
-  .features-grid .spotlight-card {
+  .features-grid .spotlight-panel {
     grid-column: span 2;
   }
   .discover-teaser {
@@ -454,7 +454,7 @@ footer {
 }
 
 @media (max-width: 768px) {
-  .nav-links {
+  .menu-list {
     display: none;
     flex-direction: column;
     background: #fff;
@@ -466,7 +466,7 @@ footer {
     box-shadow: 0 20px 40px rgba(0,0,0,0.08);
     gap: 1rem;
   }
-  .nav-links.open {
+  .menu-list.open {
     display: flex;
   }
   .hamburger {
@@ -477,7 +477,7 @@ footer {
     grid-template-columns: 1fr;
     margin-top: -1.5rem;
   }
-  .features-grid .spotlight-card {
+  .features-grid .spotlight-panel {
     grid-column: span 1;
   }
 
@@ -504,7 +504,7 @@ footer {
   .wrapper {
     padding: 0 1rem;
   }
-  .card {
+  .panel {
     padding: 1.2rem;
   }
 }
