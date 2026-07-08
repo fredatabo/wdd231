@@ -1,4 +1,4 @@
-/* style.css – Abuja Chamber of Commerce */
+/* chamber.css – Abuja Chamber of Commerce */
 
 
 /* ---------- RESET & BASE ---------- */
@@ -24,7 +24,7 @@ ul {
   list-style: none;
 }
 
-.container {
+.wrapper {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1.5rem;
@@ -70,7 +70,7 @@ p {
 }
 
 /* ---------- BUTTONS ---------- */
-.btn {
+.action-btn {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -83,57 +83,57 @@ p {
   cursor: pointer;
 }
 
-.btn-primary {
+.action-btn-primary {
   background: var(--primary);
   color: #fff;
   border-color: var(--primary);
 }
-.btn-primary:hover {
+.action-btn-primary:hover {
   background: var(--primary-light);
   border-color: var(--primary-light);
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(26, 60, 94, 0.2);
 }
 
-.btn-outline {
+.action-btn-outline {
   background: transparent;
   color: #fff;
   border-color: #fff;
 }
-.btn-outline:hover {
+.action-btn-outline:hover {
   background: #fff;
   color: var(--primary);
 }
 
-.btn-secondary {
+.action-btn-secondary {
   background: var(--secondary);
   color: #fff;
   border-color: var(--secondary);
 }
-.btn-secondary:hover {
+.action-btn-secondary:hover {
   background: var(--secondary-light);
   border-color: var(--secondary-light);
   transform: translateY(-2px);
 }
 
-.btn-light {
+.action-btn-light {
   background: #fff;
   color: var(--primary);
   border-color: #fff;
 }
-.btn-light:hover {
+.action-btn-light:hover {
   background: var(--bg-light);
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
 
-.text-link {
+.link-arrow {
   font-weight: 600;
   color: var(--primary);
   border-bottom: 2px solid transparent;
   transition: border 0.2s;
 }
-.text-link:hover {
+.link-arrow:hover {
   border-bottom-color: var(--primary);
 }
 
@@ -147,7 +147,7 @@ header {
   z-index: 100;
 }
 
-.nav-container {
+.nav-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -217,11 +217,13 @@ header {
 }
 .hero h1 {
   margin-bottom: 0.5rem;
+  color: #fff;
 }
 .hero-sub {
   font-size: 1.25rem;
   opacity: 0.85;
   margin-bottom: 2rem;
+  color: #fff;
 }
 .hero-cta {
   display: flex;
@@ -491,14 +493,14 @@ footer {
   .hero {
     padding: 3rem 0 3.5rem;
   }
-  .hero-cta .btn {
+  .hero-cta .action-btn {
     width: 100%;
     justify-content: center;
   }
 }
 
 @media (max-width: 480px) {
-  .container {
+  .wrapper {
     padding: 0 1rem;
   }
   .card {
