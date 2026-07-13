@@ -1,0 +1,118 @@
+/* larger.css — styles for wider viewports, loaded after small.css */
+
+@media (min-width: 768px) {
+
+  .wrapper {
+    padding: 0 2rem;
+  }
+
+  /* ---------- HEADER / NAV ---------- */
+  .nav-wrapper {
+    padding: 1rem 2rem;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  nav {
+    width: auto;
+  }
+
+  .menu-list {
+    display: flex;
+    flex-direction: row;
+    background: transparent;
+    border-top: none;
+    gap: 2rem;
+  }
+
+  .menu-list li {
+    border-bottom: none;
+  }
+
+  .menu-list a {
+    padding: 0.4rem 0;
+    border-left: none;
+    border-bottom: 2px solid transparent;
+  }
+
+  .menu-list a:hover,
+  .menu-list a.is-current {
+    border-left-color: transparent;
+    border-bottom-color: var(--secondary);
+  }
+
+  /* ---------- MAIN ---------- */
+  main > h1 {
+    padding: 0 2rem;
+  }
+
+  main section {
+    padding: 2rem;
+  }
+
+  /* About section: photo beside text */
+  .about-content {
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+  }
+
+ 
+  .about-photo {
+    width: 180px;
+    height: 180px;
+    flex-shrink: 0;
+    background-image: url('../images/fred-atabo.jpg'); /* or your image URL */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+ 
+
+  /* Course cards: multi-column grid */
+  .course-cards {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  /* Goals: two-column grid */
+  .goals-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer {
+    padding: 2.5rem 2rem;
+  }
+
+  .footer-columns {
+    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .footer-col {
+    text-align: left;
+  }
+
+  .social-icons {
+    justify-content: flex-start;
+  }
+}
+
+@media (min-width: 1100px) {
+  .course-cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .goals-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

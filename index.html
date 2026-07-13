@@ -3,191 +3,129 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="images/favicon.ico">
-  <title>Abuja Chamber of Commerce | Home</title>
-  <meta name="description" content="Abuja Chamber of Commerce – empowering local businesses in Nigeria's capital. Join our network, discover events, and support community growth.">
+  <title>Frederick Atabo | Home</title>
+  <meta name="description" content="Personal home page for Frederick Atabo — WDD 231 web development student, showcasing course work and web development projects.">
   <meta name="author" content="Frederick Atabo">
 
-  <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="Abuja Chamber of Commerce | Home">
-  <meta property="og:description" content="Empowering businesses and strengthening community in Abuja, Nigeria. Join the chamber today.">
-  
-  <meta property="og:image" content="https://fredatabo.github.io/wdd231/images/meta.png">
-  <meta property="og:url" content="https://fredatabo.github.io/wdd231/">
-  <!-- Font & Icons -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-  <!-- Custom styles - NO CSS frameworks allowed -->
-  <link rel="stylesheet" href="styles/chamber.css">
+  <!-- Stylesheets: normalize first, then small.css, then larger.css (contains the media query) -->
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/small.css">
+  <link rel="stylesheet" href="styles/larger.css">
 
-  <!-- Script -->
-  <script src="scripts/chamber.js" defer></script>
+  <!-- Scripts: one file per responsibility, deferred -->
+  <script src="scripts/navigation.js" defer></script>
+  <script src="scripts/date.js" defer></script>
+  <script src="scripts/course.js" defer></script>
 </head>
 <body>
-  <!-- HEADER / NAV -->
+
   <header>
     <div class="wrapper nav-wrapper">
       <div class="logo">
-        <i class="fas fa-building" aria-hidden="true"></i>
-        <span>Abuja<span class="chamber">Chamber</span></span>
+        <img src="images/logo.svg" alt="Site logo">
+        <span>Frederick Atabo</span>
       </div>
-      <nav aria-label="Main navigation">
-        <ul class="menu-list">
-          <li><a href="#" class="is-current"><i class="fas fa-home"></i> Home</a></li>
-          <li><a href="#"><i class="fas fa-compass"></i> Discover</a></li>
-          <li><a href="#"><i class="fas fa-list"></i> Directory</a></li>
-          <li><a href="#"><i class="fas fa-user-plus"></i> Join</a></li>
-        </ul>
-      </nav>
-      <div class="hamburger" id="hamburger" aria-label="Toggle navigation menu" role="button" tabindex="0">
+
+      <div class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" role="button" tabindex="0">
         <span></span><span></span><span></span>
       </div>
+
+      <nav aria-label="Main navigation">
+        <ul class="menu-list">
+          <li><a href="index.html" class="is-current">Home</a></li>
+          <li><a href="chamber/index.html">Chamber</a></li>
+          <li><a href="final/index.html">Final</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
 
   <main>
-    <!-- SECTION 1: HERO -->
-    <section class="hero">
-      <div class="wrapper hero-content">
-        <h1>Welcome to Abuja Chamber</h1>
-        <h2 class="hero-sub">Empowering businesses · Strengthening community</h2>
-        <div class="hero-cta">
-          <a href="#" class="cta-link cta-primary"><i class="fas fa-handshake"></i> Become a Member</a>
-          <a href="#" class="cta-link cta-outline"><i class="fas fa-calendar-alt"></i> Upcoming Events</a>
+    <h1>Home</h1>
+
+    <section class="about-section">
+      <h2>About Me</h2>
+      <div class="wrapper about-content">
+        <div class="about-photo">
+           
         </div>
+<p>I am a Web Developer and Software Engineering student with experience in Laravel, PHP, MySQL, JavaScript, HTML, CSS, and WordPress. I build secure, user-friendly web applications, including e-commerce platforms, loan management systems, CBT systems, and document verification solutions, while continuously expanding my skills in modern software development.</p>
+
       </div>
     </section>
 
-    <!-- SECTION 2: FEATURES GRID (Community + Weather + Spotlight) -->
-    <section class="features-section">
+    <section class="courses-section">
+      <h2>Certificate Courses</h2>
       <div class="wrapper">
-        <h2 class="section-title">Community Overview</h2>
-        <div class="features-grid">
-          <!-- community info -->
-          <div class="panel community-panel">
-            <div class="panel-icon"><i class="fas fa-city"></i></div>
-            <h3>Abuja · Capital City</h3>
-            <p>Nigeria's vibrant heart. Home to a thriving business ecosystem, rich cultural heritage, and a dynamic community of innovators.</p>
-            <ul class="community-stats">
-              <li><span>🌍</span> 3.6M+ residents</li>
-              <li><span>🏢</span> 450+ member businesses</li>
-              <li><span>📈</span> 12% annual growth</li>
-            </ul>
-          </div>
+        <p class="courses-intro">Web and Computer Programming certificate — courses toward my degree.</p>
 
-          <!-- weather widget (dynamic) -->
-          <div class="panel weather-panel">
-            <div class="panel-icon"><i class="fas fa-cloud-sun"></i></div>
-            <h3>Abuja Weather</h3>
-            <div class="weather-display" id="weatherDisplay">
-              <div class="weather-temp"><span id="tempValue">28</span>°C</div>
-              <div class="weather-desc" id="weatherDesc">Partly Cloudy</div>
-              <div class="weather-details">
-                <span><i class="fas fa-tint"></i> <span id="humidity">62</span>%</span>
-                <span><i class="fas fa-wind"></i> <span id="windSpeed">14</span> km/h</span>
-              </div>
-            </div>
-            <p class="weather-attribution"><i class="fas fa-sync-alt" id="refreshWeather"></i> updated just now</p>
-          </div>
-
-          <!-- call to action spotlight -->
-          <div class="panel spotlight-panel">
-            <div class="panel-icon"><i class="fas fa-bullhorn"></i></div>
-            <h3>Business Spotlight</h3>
-            <div class="spotlight-item">
-              <div class="spotlight-logo"><i class="fas fa-store"></i></div>
-              <div>
-                <h4>Zuma Crafts</h4>
-                <p>Handmade leather goods &amp; accessories · <strong>Member since 2021</strong></p>
-                <a href="#" class="link-arrow">Discover →</a>
-              </div>
-            </div>
-            <div class="spotlight-item">
-              <div class="spotlight-logo"><i class="fas fa-utensils"></i></div>
-              <div>
-                <h4>Plateau Bistro</h4>
-                <p>Modern Nigerian cuisine · <strong>Gold member</strong></p>
-                <a href="#" class="link-arrow">Discover →</a>
-              </div>
-            </div>
-            <div class="spotlight-cta">
-              <a href="#" class="cta-link cta-secondary">View All Members</a>
-            </div>
-          </div>
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="ALL">All Courses</button>
+          <button class="filter-btn" data-filter="WDD">WDD Courses</button>
+          <button class="filter-btn" data-filter="CSE">CSE Courses</button>
         </div>
+
+        <div class="course-cards" id="courseCards">
+          <!-- course cards injected here by scripts/course.js -->
+        </div>
+
+        <p class="total-credits">Total credits: <span id="totalCredits">0</span></p>
       </div>
     </section>
 
-    <!-- SECTION 3: CALL TO ACTION BANNER -->
-    <section class="cta-banner">
-      <div class="wrapper">
-        <h2>Grow your business with Abuja's leading network</h2>
-        <p>Join hundreds of local businesses that are shaping the future of the capital.</p>
-        <a href="#" class="cta-link cta-light"><i class="fas fa-file-signature"></i> Apply for Membership</a>
-      </div>
-    </section>
-
-    <!-- SECTION 4: DISCOVER TEASER -->
-    <section class="discover-section">
-      <div class="wrapper">
-        <h2 class="section-title">Discover More</h2>
-        <div class="discover-teaser">
-          <div class="teaser-item">
-            <i class="fas fa-landmark"></i>
-            <h3>Discover Abuja</h3>
-            <p>Explore the history, demographics, and vibrant culture of Nigeria's capital.</p>
-            <a href="#" class="link-arrow">Learn more →</a>
-          </div>
-          <div class="teaser-item">
-            <i class="fas fa-calendar-week"></i>
-            <h3>Events &amp; Networking</h3>
-            <p>From luncheons to training workshops — stay connected.</p>
-            <a href="#" class="link-arrow">View calendar →</a>
-          </div>
-          <div class="teaser-item">
-            <i class="fas fa-hand-holding-heart"></i>
-            <h3>Community Impact</h3>
-            <p>Our members are driving positive change in Abuja.</p>
-            <a href="#" class="link-arrow">Read stories →</a>
-          </div>
+    <section class="goals-section">
+      <h2>Course Goals</h2>
+      <div class="wrapper goals-list">
+        <div class="goal-item">
+          <h3>Build accessible, semantic pages</h3>
+          <p>Apply proper heading structure, alt text, and ARIA where needed on every project.</p>
+        </div>
+        <div class="goal-item">
+          <h3>Write responsive, framework-free CSS</h3>
+          <p>Layouts that work cleanly from 320px up, using only custom, hand-written CSS.</p>
+        </div>
+        <div class="goal-item">
+          <h3>Strengthen JavaScript fundamentals</h3>
+          <p>Use arrays, DOM manipulation, and event handling to build dynamic, data-driven pages.</p>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- FOOTER -->
   <footer>
-    <div class="wrapper footer-grid">
-      <div class="footer-col">
-        <div class="logo"><i class="fas fa-building"></i> Abuja<span class="chamber">Chamber</span></div>
-        <p>© 2026 Abuja Chamber of Commerce<br> fostering business &amp; community.</p>
+    <div class="wrapper footer-columns">
+
+      <!-- Footer item 1: social media links -->
+      <div class="footer-col social-icons">
+        <a href="https://github.com/fredatabo" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.09 3.29 9.4 7.86 10.93.57.1.78-.25.78-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.76.11 3.05.73.8 1.18 1.83 1.18 3.09 0 4.42-2.7 5.4-5.26 5.68.41.36.78 1.08.78 2.18 0 1.57-.01 2.84-.01 3.23 0 .3.2.66.79.55A10.51 10.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/frederick-atabo-509440174/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.15 1.45-2.15 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.26 2.37 4.26 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z"/></svg>
+        </a>
+        <a href="https://twitter.com/" target="_blank" rel="noopener" aria-label="Twitter">
+          <svg viewBox="0 0 24 24"><path d="M23 4.9c-.8.36-1.68.6-2.6.71a4.52 4.52 0 0 0 1.98-2.5c-.87.52-1.84.9-2.87 1.1a4.5 4.5 0 0 0-7.67 4.1A12.78 12.78 0 0 1 2.6 3.66a4.5 4.5 0 0 0 1.4 6 4.47 4.47 0 0 1-2.04-.56v.06a4.5 4.5 0 0 0 3.6 4.42 4.5 4.5 0 0 1-2.03.08 4.5 4.5 0 0 0 4.2 3.13A9.03 9.03 0 0 1 1 19.54a12.75 12.75 0 0 0 6.92 2.03c8.3 0 12.85-6.88 12.85-12.85 0-.2 0-.39-.01-.58A9.2 9.2 0 0 0 23 4.9Z"/></svg>
+        </a>
       </div>
-      <div class="footer-col">
-        <h4>Quick links</h4>
-        <ul>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Directory</a></li>
-          <li><a href="#">Join</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
+
+      <!-- Footer item 2: copyright + name + location -->
+      <div class="footer-col footer-info">
+        <p>&copy; <span id="copyrightYear"></span> Frederick Atabo</p>
+        <p>Abuja, Nigeria</p>
       </div>
+
+      <!-- Footer item 3: last modified date -->
       <div class="footer-col">
-        <h4>Connect</h4>
-        <div class="social-icons">
-          <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        </div>
-        <p><i class="fas fa-map-pin"></i> Abuja, Nigeria</p>
+        <p id="lastModified"></p>
       </div>
-    </div>
-    <div class="footer-bottom">
-      <p>Built with semantic HTML, CSS, and JavaScript · responsive design</p>
+
     </div>
   </footer>
+
 </body>
 </html>
