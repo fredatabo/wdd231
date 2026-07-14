@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="images/favicon.ico">
+  <title>Abuja Chamber of Commerce | Directory</title>
+  <meta name="description" content="Browse the Abuja Chamber of Commerce member business directory — find contact details, websites, and membership level for local businesses.">
+  <meta name="author" content="Frederick Atabo">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Abuja Chamber of Commerce | Directory">
+  <meta property="og:description" content="Browse our member business directory and connect with local businesses shaping Abuja's economy.">
+  <meta property="og:image" content="https://fredatabo.github.io/wdd231/images/meta.png">
+  <meta property="og:url" content="https://fredatabo.github.io/wdd231/chamber/directory.html">
+
+  <!-- Custom CSS – reset first, then mobile-first small.css, then larger.css overrides. NO CSS frameworks allowed. -->
+  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="styles/small.css">
+  <link rel="stylesheet" href="styles/larger.css">
+
+  <!-- Font & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- Scripts -->
+  <script src="scripts/chamber.js" defer></script>
+  <script src="scripts/directory.js" defer></script>
+</head>
+<body>
+  <!-- HEADER / NAV (consistent with all pages) -->
+  <header>
+    <div class="wrapper nav-wrapper">
+      <div class="logo">
+        <i class="fas fa-building" aria-hidden="true"></i>
+        <span>Abuja<span class="chamber">Chamber</span></span>
+      </div>
+      <nav aria-label="Main navigation">
+        <ul class="menu-list">
+          <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+          <li><a href="discover.html"><i class="fas fa-compass"></i> Discover</a></li>
+          <li><a href="directory.html" class="is-current"><i class="fas fa-list"></i> Directory</a></li>
+          <li><a href="join.html"><i class="fas fa-user-plus"></i> Join</a></li>
+        </ul>
+      </nav>
+      <div class="hamburger" id="hamburger" aria-label="Toggle navigation menu" role="button" tabindex="0">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- SECTION 1: DIRECTORY HEADER + VIEW TOGGLE -->
+    <section class="directory-header wrapper">
+      <h1>Business Directory</h1>
+      <h2 class="directory-sub">Browse our growing network of Abuja Chamber member businesses.</h2>
+      <div class="view-toggle" role="group" aria-label="Directory view options">
+        <button id="gridViewBtn" type="button" class="toggle-option toggle-option-active" aria-pressed="true">Grid</button>
+        <button id="listViewBtn" type="button" class="toggle-option" aria-pressed="false">List</button>
+      </div>
+    </section>
+
+    <!-- SECTION 2: MEMBER LISTING -->
+    <section class="directory-listing wrapper" aria-labelledby="memberListHeading">
+      <h2 id="memberListHeading" class="a11y-hidden">Member Businesses</h2>
+      <div id="memberContainer" class="member-grid">
+        <!-- Member panels are injected here by directory.js via fetch() -->
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER (consistent with all pages) -->
+  <footer>
+    <div class="wrapper footer-grid">
+      <div class="footer-col footer-contact">
+        <h4>Abuja Chamber of Commerce</h4>
+        <address>
+          123 Independence Avenue<br>
+          Abuja, FCT 900001<br>
+          <a href="mailto:info@abujachamber.org">info@abujachamber.org</a><br>
+          <a href="tel:+2348001234567">(0800) 123-4567</a>
+        </address>
+      </div>
+      <div class="footer-col footer-social">
+        <div class="social-icons">
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+      <div class="footer-col footer-dev">
+        <p>WDD 231 Class Project</p>
+        <p>Frederick Atabo</p>
+        <p>&copy; <span id="currentyear"></span> Abuja Chamber of Commerce</p>
+        <p>Last Modification: <span id="lastmodified"></span></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Built with semantic HTML, CSS, and JavaScript · responsive design</p>
+    </div>
+  </footer>
+</body>
+</html>

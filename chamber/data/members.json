@@ -1,0 +1,92 @@
+{
+  "members": [
+    {
+      "name": "Zuma Crafts",
+      "tagline": "Handmade leather goods & accessories",
+      "address": "14 Aminu Kano Crescent, Wuse II, Abuja",
+      "phone": "+234 800 111 2201",
+      "email": "info@zumacrafts.ng",
+      "url": "https://www.zumacrafts.ng",
+      "image": "zuma-crafts.jpg",
+      "membership": 3,
+      "founded": 2021
+    },
+    {
+      "name": "Plateau Bistro",
+      "tagline": "Modern Nigerian cuisine",
+      "address": "9 Adetokunbo Ademola Crescent, Wuse II, Abuja",
+      "phone": "+234 800 111 2202",
+      "email": "reservations@plateaubistro.ng",
+      "url": "https://www.plateaubistro.ng",
+      "image": "plateau-bistro.jpg",
+      "membership": 3,
+      "founded": 2019
+    },
+    {
+      "name": "Aso Rock Tech Hub",
+      "tagline": "Coworking space & startup incubator",
+      "address": "22 Gimbiya Street, Garki, Abuja",
+      "phone": "+234 800 111 2203",
+      "email": "hello@asorocktech.ng",
+      "url": "https://www.asorocktech.ng",
+      "image": "aso-rock-tech.jpg",
+      "membership": 2,
+      "founded": 2022
+    },
+    {
+      "name": "Gwarinpa Realty Group",
+      "tagline": "Residential & commercial property management",
+      "address": "5th Avenue, Gwarinpa Estate, Abuja",
+      "phone": "+234 800 111 2204",
+      "email": "contact@gwarinparealty.ng",
+      "url": "https://www.gwarinparealty.ng",
+      "image": "gwarinpa-realty.jpg",
+      "membership": 2,
+      "founded": 2015
+    },
+    {
+      "name": "Maitama Legal Partners",
+      "tagline": "Corporate & commercial law practice",
+      "address": "18 Yedseram Street, Maitama, Abuja",
+      "phone": "+234 800 111 2205",
+      "email": "info@maitamalegal.ng",
+      "url": "https://www.maitamalegal.ng",
+      "image": "maitama-legal.jpg",
+      "membership": 3,
+      "founded": 2012
+    },
+    {
+      "name": "Wuse Market Traders Co-op",
+      "tagline": "Wholesale & retail traders association",
+      "address": "Wuse Ultra-Modern Market, Abuja",
+      "phone": "+234 800 111 2206",
+      "email": "admin@wusemarket.ng",
+      "url": "https://www.wusemarket.ng",
+      "image": "wuse-market.jpg",
+      "membership": 1,
+      "founded": 2010
+    },
+    {
+      "name": "Jabi Lake Resort",
+      "tagline": "Lakeside hospitality & events venue",
+      "address": "Jabi Lake Road, Jabi, Abuja",
+      "phone": "+234 800 111 2207",
+      "email": "bookings@jabilakeresort.ng",
+      "url": "https://www.jabilakeresort.ng",
+      "image": "jabi-lake-resort.jpg",
+      "membership": 2,
+      "founded": 2018
+    },
+    {
+      "name": "Garki Construction Ltd",
+      "tagline": "Residential & infrastructure construction",
+      "address": "31 Ahmadu Bello Way, Garki, Abuja",
+      "phone": "+234 800 111 2208",
+      "email": "projects@garkiconstruction.ng",
+      "url": "https://www.garkiconstruction.ng",
+      "image": "garki-construction.jpg",
+      "membership": 1,
+      "founded": 2008
+    }
+  ]
+}
