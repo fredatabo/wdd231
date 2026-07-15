@@ -7,7 +7,7 @@
       "phone": "+234 800 111 2201",
       "email": "info@zumacrafts.ng",
       "url": "https://www.zumacrafts.ng",
-      "image": "zuma-crafts.jpg",
+     "image": "images/image4.webp",
       "membership": 3,
       "founded": 2021
     },
@@ -18,7 +18,7 @@
       "phone": "+234 800 111 2202",
       "email": "reservations@plateaubistro.ng",
       "url": "https://www.plateaubistro.ng",
-      "image": "plateau-bistro.jpg",
+     "image": "images/image5.webp",
       "membership": 3,
       "founded": 2019
     },
@@ -29,7 +29,7 @@
       "phone": "+234 800 111 2203",
       "email": "hello@asorocktech.ng",
       "url": "https://www.asorocktech.ng",
-      "image": "aso-rock-tech.jpg",
+     "image": "images/image6.webp",
       "membership": 2,
       "founded": 2022
     },
@@ -40,7 +40,7 @@
       "phone": "+234 800 111 2204",
       "email": "contact@gwarinparealty.ng",
       "url": "https://www.gwarinparealty.ng",
-      "image": "gwarinpa-realty.jpg",
+    "image": "images/image7.webp",
       "membership": 2,
       "founded": 2015
     },
@@ -51,7 +51,7 @@
       "phone": "+234 800 111 2205",
       "email": "info@maitamalegal.ng",
       "url": "https://www.maitamalegal.ng",
-      "image": "maitama-legal.jpg",
+    "image": "images/image8.webp",
       "membership": 3,
       "founded": 2012
     },
@@ -62,7 +62,7 @@
       "phone": "+234 800 111 2206",
       "email": "admin@wusemarket.ng",
       "url": "https://www.wusemarket.ng",
-      "image": "wuse-market.jpg",
+    "image": "images/image8.webp",
       "membership": 1,
       "founded": 2010
     },
@@ -73,7 +73,7 @@
       "phone": "+234 800 111 2207",
       "email": "bookings@jabilakeresort.ng",
       "url": "https://www.jabilakeresort.ng",
-      "image": "jabi-lake-resort.jpg",
+     "image": "images/image9.webp",
       "membership": 2,
       "founded": 2018
     },
@@ -84,7 +84,7 @@
       "phone": "+234 800 111 2208",
       "email": "projects@garkiconstruction.ng",
       "url": "https://www.garkiconstruction.ng",
-      "image": "garki-construction.jpg",
+     "image": "images/image10.webp",
       "membership": 1,
       "founded": 2008
     }
