@@ -37,10 +37,10 @@ document.addEventListener('DOMContentLoaded', function () {
         <div class="member-body">
           <img
             class="member-image"
-            src="images/members/${member.image}"
+            src="images/${member.image}"
             alt="${member.name} logo"
             loading="lazy"
-            onerror="this.onerror=null; this.src='images/members/placeholder.png';"
+            onerror="this.onerror=null; this.src='images/placeholder.png';"
           >
           <div class="member-info">
             <h3>${member.name}</h3>
