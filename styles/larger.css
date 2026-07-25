@@ -1,187 +1,118 @@
-/* larger.css – Abuja Chamber of Commerce
-   Progressive enhancement for wider viewports, on top of small.css.
-   Mobile-first: every rule here lives inside a min-width media query,
-   so nothing here applies below that breakpoint. */
+/* larger.css — styles for wider viewports, loaded after small.css */
 
-/* ---------- 640px and up: breathing room, roomier type ---------- */
-@media (min-width: 640px) {
-  .wrapper {
-    padding: 0 1.5rem;
-  }
-
-  h1 {
-    font-size: 2.6rem;
-  }
-
-  .hero {
-    padding: 4rem 0 4.5rem;
-  }
-  .hero-sub {
-    font-size: 1.15rem;
-  }
-  .hero-cta {
-    flex-direction: row;
-    justify-content: center;
-  }
-  .hero-cta .cta-link {
-    width: auto;
-  }
-  .hero-stats {
-    flex-direction: row;
-    justify-content: center;
-    gap: 1.5rem;
-  }
-
-  .directory-header {
-    padding: 2.5rem 1.5rem 1.5rem;
-  }
-
-  .weather-layout {
-    flex-direction: row;
-    align-items: stretch;
-  }
-  .weather-current {
-    flex: 0 0 260px;
-  }
-  .forecast-grid {
-    flex: 1;
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .events-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-/* ---------- 768px and up: full horizontal nav, 2-3 column grids ---------- */
 @media (min-width: 768px) {
+
+  .wrapper {
+    padding: 0 2rem;
+  }
+
+  /* ---------- HEADER / NAV ---------- */
+  .nav-wrapper {
+    padding: 1rem 2rem;
+  }
+
   .hamburger {
     display: none;
+  }
+
+  nav {
+    width: auto;
   }
 
   .menu-list {
     display: flex;
     flex-direction: row;
-    position: static;
-    width: auto;
-    padding: 0;
-    box-shadow: none;
-    gap: 2rem;
     background: transparent;
+    border-top: none;
+    gap: 2rem;
   }
+
+  .menu-list li {
+    border-bottom: none;
+  }
+
   .menu-list a {
-    display: inline-block;
+    padding: 0.4rem 0;
+    border-left: none;
+    border-bottom: 2px solid transparent;
   }
 
-  .discover-teaser {
-    grid-template-columns: 1fr 1fr;
+  .menu-list a:hover,
+  .menu-list a.is-current {
+    border-left-color: transparent;
+    border-bottom-color: var(--secondary);
   }
 
-  .spotlight-grid {
+  /* ---------- MAIN ---------- */
+  main > h1 {
+    padding: 0 2rem;
+  }
+
+  main section {
+    padding: 2rem;
+  }
+
+  /* About section: photo beside text */
+  .about-content {
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+  }
+
+ 
+  .about-photo {
+    width: 180px;
+    height: 180px;
+    flex-shrink: 0;
+    background-image: url('../images/fred-atabo.jpg'); /* or your image URL */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+ 
+
+  /* Course cards: multi-column grid */
+  .course-cards {
     grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
   }
 
-  .member-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-  .member-grid.list-view {
-    grid-template-columns: 1fr;
+  /* Goals: two-column grid */
+  .goals-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
   }
 
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
+  /* ---------- FOOTER ---------- */
+  footer {
+    padding: 2.5rem 2rem;
   }
-  .footer-social {
-    justify-content: center;
+
+  .footer-columns {
+    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .footer-col {
+    text-align: left;
+  }
+
+  .social-icons {
+    justify-content: flex-start;
   }
 }
 
-/* ---------- 1024px and up: full desktop layout, 3-column grids ---------- */
-@media (min-width: 1024px) {
-  h1 {
-    font-size: clamp(2.2rem, 6vw, 3.6rem);
-  }
-  h2 {
-    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
-  }
-  h3 {
-    font-size: 1.2rem;
+@media (min-width: 1100px) {
+  .course-cards {
+    grid-template-columns: repeat(4, 1fr);
   }
 
-  .panel {
-    padding: 1.8rem 1.5rem;
-  }
-  .panel:hover {
-    transform: translateY(-4px);
-  }
-
-  .cta-link {
-    padding: 0.7rem 1.8rem;
-    font-size: 1rem;
-  }
-
-  .hero {
-    padding: 5rem 0 5.5rem;
-  }
-
-  .weather-section,
-  .events-section,
-  .spotlight-section {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-  }
-
-  .events-grid {
+  .goals-list {
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-  }
-
-  .discover-teaser {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin: 3rem auto 4rem;
-  }
-
-  .directory-listing {
-    padding: 1rem 1.5rem 4rem;
-  }
-
-  .member-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.75rem;
-  }
-  .member-grid .member-panel {
-    flex-direction: column;
-  }
-  .member-grid .member-body {
-    flex-direction: column;
-  }
-  .member-grid .member-image {
-    width: 100%;
-    height: 150px;
-  }
-  .member-grid.list-view {
-    grid-template-columns: 1fr;
-  }
-  .member-grid.list-view .member-panel,
-  .member-grid.list-view .member-body {
-    flex-direction: row;
-  }
-  .member-grid.list-view .member-image {
-    width: 64px;
-    height: 64px;
-  }
-
-  .footer-grid {
-    grid-template-columns: 1.3fr auto 1fr;
-    gap: 2rem;
-    align-items: start;
-    padding-bottom: 2rem;
-  }
-  .footer-social {
-    justify-content: center;
-  }
-  .footer-dev {
-    text-align: right;
   }
 }
