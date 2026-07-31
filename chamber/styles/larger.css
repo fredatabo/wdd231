@@ -94,6 +94,10 @@
   .footer-social {
     justify-content: center;
   }
+
+  .level-cards {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 /* ---------- 1024px and up: full desktop layout, 3-column grids ---------- */
@@ -184,25 +188,8 @@
   .footer-dev {
     text-align: right;
   }
-}
 
-
-/* ===== JOIN PAGE LARGER SCREENS ===== */
-
-/* 768px and up: cards in 2 columns */
-@media (min-width: 768px) {
-  .membership-cards {
-    grid-template-columns: 1fr 1fr;
-  }
-  
-  .btn-primary {
-     width: auto;
-    padding: 0.9rem 3rem;
-  }
-}
-
-/* 1024px and up: form and cards side by side */
-@media (min-width: 1024px) {
+  /* JOIN PAGE: form and cards side by side */
   .join-layout {
     flex-direction: row;
     align-items: flex-start;
@@ -212,17 +199,17 @@
     flex: 1.2;
     min-width: 0;
   }
-  .membership-cards {
+  .level-cards {
     flex: 1;
     grid-template-columns: 1fr;
     gap: 0.9rem;
     min-width: 260px;
   }
-  .card {
+  .level-card {
     padding: 1rem 1.25rem;
     text-align: left;
   }
-  .card .fee {
+  .level-card .fee {
     font-size: 0.95rem;
   }
   .join-hero {
@@ -233,15 +220,15 @@
   }
 }
 
-/* 1200px and up: more spacious */
+/* ---------- 1200px and up: extra breathing room on the join page ---------- */
 @media (min-width: 1200px) {
   .join-layout {
     gap: 4rem;
   }
-  .membership-cards {
+  .level-cards {
     gap: 1.1rem;
   }
-  .card {
+  .level-card {
     padding: 1.25rem 1.5rem;
   }
 }

@@ -62,6 +62,7 @@
     <section class="join-layout wrapper">
       <!-- FORM -->
       <div class="join-form-wrap">
+        <h2 class="a11y-hidden">Membership Application Form</h2>
         <form id="membershipForm" action="thankyou.html" method="get" autocomplete="on">
           <!-- First Name -->
           <label for="firstName">First Name <span aria-hidden="true">*</span>
@@ -114,91 +115,97 @@
           <input type="hidden" id="timestamp" name="timestamp" value="">
 
           <!-- Submit -->
-          <input type="submit" value="Apply for Membership" class="btn-primary">
+          <input type="submit" value="Apply for Membership" class="cta-link cta-primary join-submit">
         </form>
       </div>
 
-      <!-- MEMBERSHIP CARDS -->
-      <div class="membership-cards">
-        <div class="card card-np animated-card">
-          <h3>NP Membership</h3>
-          <p>Non-Profit organizations</p>
-          <p class="fee">No fee</p>
-          <a href="#modal-np" class="card-link" data-modal="modal-np">Learn more →</a>
-        </div>
-        <div class="card card-bronze animated-card">
-          <h3>Bronze</h3>
-          <p>Essential growth</p>
-          <p class="fee">₦50,000 / year</p>
-          <a href="#modal-bronze" class="card-link" data-modal="modal-bronze">Learn more →</a>
-        </div>
-        <div class="card card-silver animated-card">
-          <h3>Silver</h3>
-          <p>Enhanced visibility</p>
-          <p class="fee">₦120,000 / year</p>
-          <a href="#modal-silver" class="card-link" data-modal="modal-silver">Learn more →</a>
-        </div>
-        <div class="card card-gold animated-card">
-          <h3>Gold</h3>
-          <p>Premium partnership</p>
-          <p class="fee">₦250,000 / year</p>
-          <a href="#modal-gold" class="card-link" data-modal="modal-gold">Learn more →</a>
+      <!-- MEMBERSHIP LEVEL CARDS -->
+      <div class="join-cards-wrap">
+        <h2 class="section-title">Membership Levels</h2>
+        <div class="level-cards">
+          <div class="panel level-card level-np">
+            <h3>NP Membership</h3>
+            <p>Non-Profit organizations</p>
+            <p class="fee">No fee</p>
+            <a href="#dialog-np" class="inline-link level-card-link" data-dialog="dialog-np">Learn more →</a>
+          </div>
+          <div class="panel level-card level-bronze">
+            <h3>Bronze</h3>
+            <p>Essential growth</p>
+            <p class="fee">₦50,000 / year</p>
+            <a href="#dialog-bronze" class="inline-link level-card-link" data-dialog="dialog-bronze">Learn more →</a>
+          </div>
+          <div class="panel level-card level-silver">
+            <h3>Silver</h3>
+            <p>Enhanced visibility</p>
+            <p class="fee">₦120,000 / year</p>
+            <a href="#dialog-silver" class="inline-link level-card-link" data-dialog="dialog-silver">Learn more →</a>
+          </div>
+          <div class="panel level-card level-gold">
+            <h3>Gold</h3>
+            <p>Premium partnership</p>
+            <p class="fee">₦250,000 / year</p>
+            <a href="#dialog-gold" class="inline-link level-card-link" data-dialog="dialog-gold">Learn more →</a>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- MODALS -->
-    <div id="modal-np" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-np-title">
-      <div class="modal-content">
-        <button class="modal-close" aria-label="Close modal">&times;</button>
-        <h2 id="modal-np-title">NP Membership Benefits</h2>
-        <ul>
-          <li>Basic directory listing</li>
-          <li>Invitations to quarterly networking events</li>
-          <li>Access to member-only resources</li>
-          <li>Eligibility for grants and training</li>
-        </ul>
+    <!-- MEMBERSHIP LEVEL DIALOGS (native <dialog>, keyboard + Escape accessible) -->
+    <dialog id="dialog-np" class="level-dialog">
+      <div class="level-dialog-header">
+        <h3 id="dialog-np-title">NP Membership Benefits</h3>
+        <button type="button" class="level-dialog-close" aria-label="Close dialog" data-close>&times;</button>
       </div>
-    </div>
-    <div id="modal-bronze" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-bronze-title">
-      <div class="modal-content">
-        <button class="modal-close" aria-label="Close modal">&times;</button>
-        <h2 id="modal-bronze-title">Bronze Benefits</h2>
-        <ul>
-          <li>Enhanced directory listing with logo</li>
-          <li>Access to monthly training webinars</li>
-          <li>10% discount on event tickets</li>
-          <li>Spotlight on social media once per quarter</li>
-        </ul>
+      <ul>
+        <li>Basic directory listing</li>
+        <li>Invitations to quarterly networking events</li>
+        <li>Access to member-only resources</li>
+        <li>Eligibility for grants and training</li>
+      </ul>
+    </dialog>
+
+    <dialog id="dialog-bronze" class="level-dialog">
+      <div class="level-dialog-header">
+        <h3 id="dialog-bronze-title">Bronze Benefits</h3>
+        <button type="button" class="level-dialog-close" aria-label="Close dialog" data-close>&times;</button>
       </div>
-    </div>
-    <div id="modal-silver" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-silver-title">
-      <div class="modal-content">
-        <button class="modal-close" aria-label="Close modal">&times;</button>
-        <h2 id="modal-silver-title">Silver Benefits</h2>
-        <ul>
-          <li>Premium directory listing with photo</li>
-          <li>Free tickets to two annual events</li>
-          <li>20% discount on training & workshops</li>
-          <li>Monthly social media feature</li>
-          <li>Access to exclusive CEO roundtables</li>
-        </ul>
+      <ul>
+        <li>Enhanced directory listing with logo</li>
+        <li>Access to monthly training webinars</li>
+        <li>10% discount on event tickets</li>
+        <li>Spotlight on social media once per quarter</li>
+      </ul>
+    </dialog>
+
+    <dialog id="dialog-silver" class="level-dialog">
+      <div class="level-dialog-header">
+        <h3 id="dialog-silver-title">Silver Benefits</h3>
+        <button type="button" class="level-dialog-close" aria-label="Close dialog" data-close>&times;</button>
       </div>
-    </div>
-    <div id="modal-gold" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-gold-title">
-      <div class="modal-content">
-        <button class="modal-close" aria-label="Close modal">&times;</button>
-        <h2 id="modal-gold-title">Gold Benefits</h2>
-        <ul>
-          <li>Top-tier directory placement with video</li>
-          <li>Complimentary tickets to all events</li>
-          <li>30% discount on all training</li>
-          <li>Weekly spotlight on homepage</li>
-          <li>Invitation to annual gala dinner</li>
-          <li>Co-branding opportunities</li>
-        </ul>
+      <ul>
+        <li>Premium directory listing with photo</li>
+        <li>Free tickets to two annual events</li>
+        <li>20% discount on training &amp; workshops</li>
+        <li>Monthly social media feature</li>
+        <li>Access to exclusive CEO roundtables</li>
+      </ul>
+    </dialog>
+
+    <dialog id="dialog-gold" class="level-dialog">
+      <div class="level-dialog-header">
+        <h3 id="dialog-gold-title">Gold Benefits</h3>
+        <button type="button" class="level-dialog-close" aria-label="Close dialog" data-close>&times;</button>
       </div>
-    </div>
+      <ul>
+        <li>Top-tier directory placement with video</li>
+        <li>Complimentary tickets to all events</li>
+        <li>30% discount on all training</li>
+        <li>Weekly spotlight on homepage</li>
+        <li>Invitation to annual gala dinner</li>
+        <li>Co-branding opportunities</li>
+      </ul>
+    </dialog>
   </main>
 
   <!-- FOOTER -->
