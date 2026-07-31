@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="images/favicon.ico">
+  <title>Abuja Chamber of Commerce | Thank You</title>
+  <meta name="description" content="Thank you for applying to join the Abuja Chamber of Commerce.">
+  <meta name="author" content="Frederick Atabo">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Abuja Chamber of Commerce | Thank You">
+  <meta property="og:description" content="Thank you for your membership application to the Abuja Chamber of Commerce.">
+  <meta property="og:image" content="https://fredatabo.github.io/wdd231/images/meta.png">
+  <meta property="og:url" content="https://fredatabo.github.io/wdd231/chamber/thankyou.html">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="styles/small.css">
+  <link rel="stylesheet" href="styles/larger.css">
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- Scripts -->
+  <script src="scripts/chamber.js" defer></script>
+  <script src="scripts/thankyou.js" defer></script>
+</head>
+<body>
+  <!-- HEADER / NAV -->
+  <header>
+    <div class="wrapper nav-wrapper">
+      <div class="logo">
+        <i class="fas fa-building" aria-hidden="true"></i>
+        <span>Abuja<span class="chamber">Chamber</span></span>
+      </div>
+      <nav aria-label="Main navigation">
+        <ul class="menu-list">
+          <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+          <li><a href="discover.html"><i class="fas fa-compass"></i> Discover</a></li>
+          <li><a href="directory.html"><i class="fas fa-list"></i> Directory</a></li>
+          <li><a href="join.html"><i class="fas fa-user-plus"></i> Join</a></li>
+        </ul>
+      </nav>
+      <div class="hamburger" id="hamburger" aria-label="Toggle navigation menu" role="button" tabindex="0">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- THANK YOU HERO -->
+    <section class="thankyou-hero wrapper">
+      <div class="thankyou-icon">
+        <i class="fas fa-check-circle" aria-hidden="true"></i>
+      </div>
+      <h1>Thank You for Applying!</h1>
+      <p class="thankyou-sub">Your membership application has been received. We'll review your information and get back to you soon.</p>
+      <div class="thankyou-actions">
+        <a href="index.html" class="btn-secondary"><i class="fas fa-home"></i> Return to Home</a>
+        <a href="directory.html" class="btn-outline"><i class="fas fa-list"></i> Browse Directory</a>
+      </div>
+    </section>
+
+    <!-- APPLICATION SUMMARY -->
+    <section class="thankyou-summary wrapper">
+      <h2>Application Summary</h2>
+      <p class="summary-sub">Here's the information you submitted:</p>
+      
+      <div class="summary-grid" id="summaryGrid">
+        <!-- Data will be injected here by JavaScript -->
+        <div class="summary-loading">Loading your application data...</div>
+      </div>
+      
+      <div class="summary-actions">
+        <p class="summary-note">If you need to make changes, please <a href="join.html" class="inline-link">return to the application form</a>.</p>
+      </div>
+    </section>
+
+    <!-- NEXT STEPS -->
+    <section class="next-steps wrapper">
+      <h2>What Happens Next?</h2>
+      <div class="steps-grid">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Review</h3>
+          <p>Our team will review your application within 2-3 business days.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>Verification</h3>
+          <p>We'll verify your business details and contact you for any clarifications.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>Welcome</h3>
+          <p>Once approved, you'll receive a welcome package with next steps.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrapper footer-grid">
+      <div class="footer-col footer-contact">
+        <h4>Abuja Chamber of Commerce</h4>
+        <address>
+          123 Independence Avenue<br>
+          Abuja, FCT 900001<br>
+          <a href="mailto:info@abujachamber.org">info@abujachamber.org</a><br>
+          <a href="tel:+2348001234567">(0800) 123-4567</a>
+        </address>
+      </div>
+      <div class="footer-col footer-social">
+        <div class="social-icons">
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+      <div class="footer-col footer-dev">
+        <p>WDD 231 Class Project</p>
+        <p>Frederick Atabo</p>
+        <p>&copy; <span id="currentyear"></span> Abuja Chamber of Commerce</p>
+        <p>Last Modification: <span id="lastmodified"></span></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Built with semantic HTML, CSS, and JavaScript · responsive design</p>
+    </div>
+  </footer>
+</body>
+</html>

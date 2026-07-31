@@ -185,3 +185,63 @@
     text-align: right;
   }
 }
+
+
+/* ===== JOIN PAGE LARGER SCREENS ===== */
+
+/* 768px and up: cards in 2 columns */
+@media (min-width: 768px) {
+  .membership-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .btn-primary {
+     width: auto;
+    padding: 0.9rem 3rem;
+  }
+}
+
+/* 1024px and up: form and cards side by side */
+@media (min-width: 1024px) {
+  .join-layout {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 3rem;
+  }
+  .join-form-wrap {
+    flex: 1.2;
+    min-width: 0;
+  }
+  .membership-cards {
+    flex: 1;
+    grid-template-columns: 1fr;
+    gap: 0.9rem;
+    min-width: 260px;
+  }
+  .card {
+    padding: 1rem 1.25rem;
+    text-align: left;
+  }
+  .card .fee {
+    font-size: 0.95rem;
+  }
+  .join-hero {
+    padding: 3rem 0 1.5rem;
+  }
+  .join-hero h1 {
+    font-size: 2.8rem;
+  }
+}
+
+/* 1200px and up: more spacious */
+@media (min-width: 1200px) {
+  .join-layout {
+    gap: 4rem;
+  }
+  .membership-cards {
+    gap: 1.1rem;
+  }
+  .card {
+    padding: 1.25rem 1.5rem;
+  }
+}

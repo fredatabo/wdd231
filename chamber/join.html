@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="images/favicon.ico">
+  <title>Abuja Chamber of Commerce | Join</title>
+  <meta name="description" content="Apply to join the Abuja Chamber of Commerce — membership levels, benefits, and application form.">
+  <meta name="author" content="Frederick Atabo">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Abuja Chamber of Commerce | Join">
+  <meta property="og:description" content="Become a member of the Abuja Chamber and grow your business network.">
+  <meta property="og:image" content="https://fredatabo.github.io/wdd231/images/meta.png">
+  <meta property="og:url" content="https://fredatabo.github.io/wdd231/chamber/join.html">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="styles/small.css">
+  <link rel="stylesheet" href="styles/larger.css">
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- Scripts -->
+  <script src="scripts/chamber.js" defer></script>
+  <script src="scripts/join.js" defer></script>
+</head>
+<body>
+  <!-- HEADER / NAV -->
+  <header>
+    <div class="wrapper nav-wrapper">
+      <div class="logo">
+        <i class="fas fa-building" aria-hidden="true"></i>
+        <span>Abuja<span class="chamber">Chamber</span></span>
+      </div>
+      <nav aria-label="Main navigation">
+        <ul class="menu-list">
+          <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+          <li><a href="discover.html"><i class="fas fa-compass"></i> Discover</a></li>
+          <li><a href="directory.html"><i class="fas fa-list"></i> Directory</a></li>
+          <li><a href="join.html" class="is-current"><i class="fas fa-user-plus"></i> Join</a></li>
+        </ul>
+      </nav>
+      <div class="hamburger" id="hamburger" aria-label="Toggle navigation menu" role="button" tabindex="0">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- JOIN HERO -->
+    <section class="join-hero wrapper">
+      <h1>Join the Abuja Chamber</h1>
+      <p class="join-sub">Grow your business, connect with leaders, and shape Abuja's economic future.</p>
+    </section>
+
+    <!-- FORM + CARDS -->
+    <section class="join-layout wrapper">
+      <!-- FORM -->
+      <div class="join-form-wrap">
+        <form id="membershipForm" action="thankyou.html" method="get" autocomplete="on">
+          <!-- First Name -->
+          <label for="firstName">First Name <span aria-hidden="true">*</span>
+            <input type="text" id="firstName" name="firstName" required autocomplete="given-name" title="Your first name" placeholder="e.g. Ada">
+          </label>
+
+          <!-- Last Name -->
+          <label for="lastName">Last Name <span aria-hidden="true">*</span>
+            <input type="text" id="lastName" name="lastName" required autocomplete="family-name" title="Your last name" placeholder="e.g. Nwachukwu">
+          </label>
+
+          <!-- Organizational Title -->
+          <label for="orgTitle">Organizational Title
+            <input type="text" id="orgTitle" name="orgTitle" autocomplete="organization-title" title="Your title within the organization" pattern="[A-Za-z\s\-]{7,}" placeholder="e.g. CEO, Director, Manager">
+            <small>Minimum 7 characters, letters, hyphens, spaces only.</small>
+          </label>
+
+          <!-- Email -->
+          <label for="email">Email Address <span aria-hidden="true">*</span>
+            <input type="email" id="email" name="email" required autocomplete="email" title="Your business email" placeholder="name@company.com">
+          </label>
+
+          <!-- Mobile Phone -->
+          <label for="mobile">Mobile Phone <span aria-hidden="true">*</span>
+            <input type="tel" id="mobile" name="mobile" required autocomplete="tel" title="Your mobile number" placeholder="+234 800 123 4567">
+          </label>
+
+          <!-- Business/Organization Name -->
+          <label for="businessName">Business/Organization Name <span aria-hidden="true">*</span>
+            <input type="text" id="businessName" name="businessName" required autocomplete="organization" title="Your business or organization name" placeholder="e.g. Abuja Tech Hub">
+          </label>
+
+          <!-- Membership Level -->
+          <label for="membershipLevel">Membership Level <span aria-hidden="true">*</span>
+            <select id="membershipLevel" name="membershipLevel" required title="Choose a membership level">
+              <option value="">-- Select --</option>
+              <option value="np">NP (Non-Profit, no fee)</option>
+              <option value="bronze">Bronze</option>
+              <option value="silver">Silver</option>
+              <option value="gold">Gold</option>
+            </select>
+          </label>
+
+          <!-- Business Description -->
+          <label for="businessDesc">Business/Organization Description
+            <textarea id="businessDesc" name="businessDesc" title="Describe your business activities" rows="4" placeholder="Tell us about your business, mission, and what you do..."></textarea>
+          </label>
+
+          <!-- Hidden Timestamp -->
+          <input type="hidden" id="timestamp" name="timestamp" value="">
+
+          <!-- Submit -->
+          <input type="submit" value="Apply for Membership" class="btn-primary">
+        </form>
+      </div>
+
+      <!-- MEMBERSHIP CARDS -->
+      <div class="membership-cards">
+        <div class="card card-np animated-card">
+          <h3>NP Membership</h3>
+          <p>Non-Profit organizations</p>
+          <p class="fee">No fee</p>
+          <a href="#modal-np" class="card-link" data-modal="modal-np">Learn more →</a>
+        </div>
+        <div class="card card-bronze animated-card">
+          <h3>Bronze</h3>
+          <p>Essential growth</p>
+          <p class="fee">₦50,000 / year</p>
+          <a href="#modal-bronze" class="card-link" data-modal="modal-bronze">Learn more →</a>
+        </div>
+        <div class="card card-silver animated-card">
+          <h3>Silver</h3>
+          <p>Enhanced visibility</p>
+          <p class="fee">₦120,000 / year</p>
+          <a href="#modal-silver" class="card-link" data-modal="modal-silver">Learn more →</a>
+        </div>
+        <div class="card card-gold animated-card">
+          <h3>Gold</h3>
+          <p>Premium partnership</p>
+          <p class="fee">₦250,000 / year</p>
+          <a href="#modal-gold" class="card-link" data-modal="modal-gold">Learn more →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODALS -->
+    <div id="modal-np" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-np-title">
+      <div class="modal-content">
+        <button class="modal-close" aria-label="Close modal">&times;</button>
+        <h2 id="modal-np-title">NP Membership Benefits</h2>
+        <ul>
+          <li>Basic directory listing</li>
+          <li>Invitations to quarterly networking events</li>
+          <li>Access to member-only resources</li>
+          <li>Eligibility for grants and training</li>
+        </ul>
+      </div>
+    </div>
+    <div id="modal-bronze" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-bronze-title">
+      <div class="modal-content">
+        <button class="modal-close" aria-label="Close modal">&times;</button>
+        <h2 id="modal-bronze-title">Bronze Benefits</h2>
+        <ul>
+          <li>Enhanced directory listing with logo</li>
+          <li>Access to monthly training webinars</li>
+          <li>10% discount on event tickets</li>
+          <li>Spotlight on social media once per quarter</li>
+        </ul>
+      </div>
+    </div>
+    <div id="modal-silver" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-silver-title">
+      <div class="modal-content">
+        <button class="modal-close" aria-label="Close modal">&times;</button>
+        <h2 id="modal-silver-title">Silver Benefits</h2>
+        <ul>
+          <li>Premium directory listing with photo</li>
+          <li>Free tickets to two annual events</li>
+          <li>20% discount on training & workshops</li>
+          <li>Monthly social media feature</li>
+          <li>Access to exclusive CEO roundtables</li>
+        </ul>
+      </div>
+    </div>
+    <div id="modal-gold" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-gold-title">
+      <div class="modal-content">
+        <button class="modal-close" aria-label="Close modal">&times;</button>
+        <h2 id="modal-gold-title">Gold Benefits</h2>
+        <ul>
+          <li>Top-tier directory placement with video</li>
+          <li>Complimentary tickets to all events</li>
+          <li>30% discount on all training</li>
+          <li>Weekly spotlight on homepage</li>
+          <li>Invitation to annual gala dinner</li>
+          <li>Co-branding opportunities</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrapper footer-grid">
+      <div class="footer-col footer-contact">
+        <h4>Abuja Chamber of Commerce</h4>
+        <address>
+          123 Independence Avenue<br>
+          Abuja, FCT 900001<br>
+          <a href="mailto:info@abujachamber.org">info@abujachamber.org</a><br>
+          <a href="tel:+2348001234567">(0800) 123-4567</a>
+        </address>
+      </div>
+      <div class="footer-col footer-social">
+        <div class="social-icons">
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+      <div class="footer-col footer-dev">
+        <p>WDD 231 Class Project</p>
+        <p>Frederick Atabo</p>
+        <p>&copy; <span id="currentyear"></span> Abuja Chamber of Commerce</p>
+        <p>Last Modification: <span id="lastmodified"></span></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Built with semantic HTML, CSS, and JavaScript · responsive design</p>
+    </div>
+  </footer>
+</body>
+</html>
