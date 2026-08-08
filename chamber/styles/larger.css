@@ -232,3 +232,79 @@
     padding: 1.25rem 1.5rem;
   }
 }
+
+/* ===== DISCOVER PAGE: RESPONSIVE GRID AREAS ===== */
+
+/* ---------- MEDIUM screens: 641px to 1024px ----------
+   2-column layout. Card 1 (the featured attraction, Aso Rock) and
+   card 8 (Wonderland Amusement Park) each span the full width as
+   section "bookends"; the remaining six cards pair up two-per-row.
+   This is a genuinely different arrangement from the stacked mobile
+   layout and from the large layout below — not just added columns. */
+@media (min-width: 641px) {
+  .discover-hero {
+    padding: 3.5rem 0 3rem;
+  }
+  .quick-facts-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .discover-gallery {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "c1 c1"
+      "c2 c3"
+      "c4 c5"
+      "c6 c7"
+      "c8 c8";
+  }
+
+  /* image hover effect — enabled from medium screens up only,
+     never on the small/mobile view per the assignment instructions */
+  .discover-card figure {
+    position: relative;
+  }
+  .discover-card img {
+    transition: transform 0.35s ease, filter 0.35s ease;
+  }
+  .discover-card:hover img {
+    transform: scale(1.08);
+    filter: brightness(1.05) saturate(1.15);
+  }
+}
+
+/* ---------- LARGE screens: 1025px and up ----------
+   4-column magazine-style layout. Card 1 becomes a large 2x2 feature
+   block, card 8 spans two columns along the bottom, and the rest of
+   the cards fill in as single cells around them. */
+@media (min-width: 1025px) {
+  .discover-hero-sub {
+    font-size: 1.1rem;
+  }
+
+  .discover-gallery {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      "c1 c1 c2 c3"
+      "c1 c1 c4 c5"
+      "c6 c7 c8 c8";
+    gap: 1.5rem;
+  }
+
+  .discover-card {
+    padding: 1.4rem;
+  }
+
+  /* the featured card (c1) gets a taller image and larger heading
+     to match its bigger footprint in the grid */
+  .discover-card[style*="c1"] h2 {
+    font-size: 1.5rem;
+  }
+  .discover-card[style*="c1"] figure {
+    aspect-ratio: 3 / 2;
+  }
+  .discover-card[style*="c1"] img {
+    height: 100%;
+    object-fit: cover;
+  }
+}

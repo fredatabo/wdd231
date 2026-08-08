@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="images/favicon.ico">
+  <title>Abuja Chamber of Commerce | Discover</title>
+  <meta name="description" content="Discover Abuja, Nigeria's capital — explore the demographics, history, and top attractions that make our chamber community a great place to live, visit, and do business.">
+  <meta name="author" content="Frederick Atabo">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Abuja Chamber of Commerce | Discover">
+  <meta property="og:description" content="Explore the demographics, history, and top attractions of Abuja, Nigeria's capital.">
+  <meta property="og:image" content="https://fredatabo.github.io/wdd231/images/meta.png">
+  <meta property="og:url" content="https://fredatabo.github.io/wdd231/discover.html">
+
+  <!-- Custom CSS – reset first, then mobile-first small.css, then larger.css overrides. NO CSS frameworks allowed. -->
+  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="styles/small.css">
+  <link rel="stylesheet" href="styles/larger.css">
+
+  <!-- Font & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- Scripts -->
+  <script src="scripts/chamber.js" defer></script>
+  <script type="module" src="scripts/discover.js"></script>
+</head>
+<body>
+  <!-- HEADER / NAV (consistent with all pages) -->
+  <header>
+    <div class="wrapper nav-wrapper">
+      <div class="logo">
+        <i class="fas fa-building" aria-hidden="true"></i>
+        <span>Abuja<span class="chamber">Chamber</span></span>
+      </div>
+      <nav aria-label="Main navigation">
+        <ul class="menu-list">
+          <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+          <li><a href="discover.html" class="is-current"><i class="fas fa-compass"></i> Discover</a></li>
+          <li><a href="directory.html"><i class="fas fa-list"></i> Directory</a></li>
+          <li><a href="join.html"><i class="fas fa-user-plus"></i> Join</a></li>
+        </ul>
+      </nav>
+      <div class="hamburger" id="hamburger" aria-label="Toggle navigation menu" role="button" tabindex="0">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- SECTION 1: DISCOVER HERO -->
+    <section class="discover-hero">
+      <div class="wrapper">
+        <h1>Discover Abuja</h1>
+        <p class="discover-hero-sub">Nigeria's purpose-built capital — a young, fast-growing city of politics, culture, and commerce at the meeting point of the north and south.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 2: VISITOR MESSAGE (localStorage last-visit info) -->
+    <section class="visit-message-section">
+      <div class="wrapper">
+        <p id="visitMessage" class="visit-message"></p>
+      </div>
+    </section>
+
+    <!-- SECTION 3: QUICK FACTS / DEMOGRAPHICS -->
+    <section class="quick-facts-section">
+      <div class="wrapper">
+        <h2 class="section-title">Abuja at a Glance</h2>
+        <ul class="quick-facts-grid">
+          <li class="panel quick-fact">
+            <i class="fas fa-users" aria-hidden="true"></i>
+            <span class="fact-value">3.6M+</span>
+            <span class="fact-label">Metro population</span>
+          </li>
+          <li class="panel quick-fact">
+            <i class="fas fa-city" aria-hidden="true"></i>
+            <span class="fact-value">1991</span>
+            <span class="fact-label">Became Nigeria's capital</span>
+          </li>
+          <li class="panel quick-fact">
+            <i class="fas fa-map" aria-hidden="true"></i>
+            <span class="fact-value">7,315 km&sup2;</span>
+            <span class="fact-label">Federal Capital Territory area</span>
+          </li>
+          <li class="panel quick-fact">
+            <i class="fas fa-language" aria-hidden="true"></i>
+            <span class="fact-value">250+</span>
+            <span class="fact-label">Ethnic groups represented</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SECTION 4: DISCOVER GALLERY (8 cards, named grid areas) -->
+    <section class="discover-gallery-section">
+      <div class="wrapper">
+        <h2 class="section-title">Places to Explore</h2>
+        <div class="discover-gallery" id="discoverGallery">
+          <p class="weather-loading">Loading places of interest&hellip;</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER (consistent with all pages) -->
+  <footer>
+    <div class="wrapper footer-grid">
+      <div class="footer-col footer-contact">
+        <h4>Abuja Chamber of Commerce</h4>
+        <address>
+          123 Independence Avenue<br>
+          Abuja, FCT 900001<br>
+          <a href="mailto:info@abujachamber.org">info@abujachamber.org</a><br>
+          <a href="tel:+2348001234567">(0800) 123-4567</a>
+        </address>
+      </div>
+      <div class="footer-col footer-social">
+        <div class="social-icons">
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+      <div class="footer-col footer-dev">
+        <p>WDD 231 Class Project</p>
+        <p>Frederick Atabo</p>
+        <p>&copy; <span id="currentyear"></span> Abuja Chamber of Commerce</p>
+        <p>Last Modification: <span id="lastmodified"></span></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Built with semantic HTML, CSS, and JavaScript · responsive design</p>
+    </div>
+  </footer>
+</body>
+</html>

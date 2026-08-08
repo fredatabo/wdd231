@@ -1089,3 +1089,130 @@ footer {
     padding: 3rem 0 4rem;
   }
 }
+
+/* ===== DISCOVER PAGE STYLES (mobile-first base) ===== */
+
+.discover-hero {
+  background: var(--primary);
+  color: #fff;
+  padding: 2.5rem 0 2rem;
+  text-align: center;
+}
+.discover-hero h1 {
+  color: #fff;
+}
+.discover-hero-sub {
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 600px;
+  margin: 0.5rem auto 0;
+}
+
+/* ----- VISITOR MESSAGE (localStorage last-visit) ----- */
+.visit-message-section {
+  padding: 1rem 0 0;
+}
+.visit-message {
+  background: var(--bg-light);
+  border-left: 4px solid var(--secondary);
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  text-align: center;
+  min-height: 1.2em;
+}
+
+/* ----- QUICK FACTS / DEMOGRAPHICS ----- */
+.quick-facts-section {
+  padding: 2rem 0;
+}
+.quick-facts-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  padding: 0;
+}
+.quick-fact {
+  text-align: center;
+}
+.quick-fact i {
+  font-size: 1.6rem;
+  color: var(--secondary);
+  margin-bottom: 0.4rem;
+  display: block;
+}
+.fact-value {
+  display: block;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+.fact-label {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 0.15rem;
+}
+
+/* ----- DISCOVER GALLERY (8 cards, named grid areas) ----- */
+.discover-gallery-section {
+  padding: 1rem 0 3rem;
+}
+
+/* Mobile (320px–640px): single stacked column, one area per row */
+.discover-gallery {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "c1"
+    "c2"
+    "c3"
+    "c4"
+    "c5"
+    "c6"
+    "c7"
+    "c8";
+}
+
+.discover-card {
+  background: var(--panel-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.1rem;
+  display: flex;
+  flex-direction: column;
+}
+.discover-card h2 {
+  font-size: 1.15rem;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+.discover-card figure {
+  margin: 0 0 0.75rem;
+  overflow: hidden;
+  border-radius: 8px;
+}
+.discover-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+  /* No hover/zoom effect on mobile view, per assignment instructions */
+  transition: none;
+}
+.discover-card address {
+  font-style: normal;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+.discover-card p {
+  font-size: 0.92rem;
+  flex: 1;
+  margin-bottom: 0.9rem;
+}
+.discover-card .learn-more-btn {
+  align-self: flex-start;
+}
