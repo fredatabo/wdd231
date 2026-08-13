@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Waypoint | Message Received</title>
+  <meta name="description" content="Confirmation page showing the details you submitted through the Waypoint contact form.">
+  <meta name="author" content="Waypoint">
+
+  <link rel="icon" href="images/favicon.ico" sizes="any">
+  <link rel="icon" href="images/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Waypoint | Message Received">
+  <meta property="og:description" content="Confirmation page showing the details you submitted through the Waypoint contact form.">
+  <meta property="og:image" content="images/og-banner.png">
+  <meta property="og:url" content="https://example.com/waypoint/thankyou.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles/style.css">
+
+  <script type="module" src="scripts/app-thankyou.mjs"></script>
+</head>
+<body>
+  <header>
+    <div class="wrapper nav-wrapper">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+            <rect x="18" y="4" width="4" height="32" rx="1" fill="#FBFAF6"/>
+            <polygon points="22,10 36,10 32,15 36,20 22,20" fill="#C4922F"/>
+            <polygon points="18,22 4,22 8,27 4,32 18,32" fill="#2E6E86"/>
+          </svg>
+        </span>
+        <span class="brand-text">Waypoint<span class="brand-sub">career field guide</span></span>
+      </a>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav aria-label="Main navigation">
+        <ul class="menu-list" id="menuList">
+          <li><a href="index.html"><span class="wp-num">1</span> Prep</a></li>
+          <li><a href="job-listings.html"><span class="wp-num">2</span> Search</a></li>
+          <li><a href="resources.html"><span class="wp-num">3</span> Connect</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrapper">
+        <span class="trailsign">Trailhead</span>
+        <h1>Message received</h1>
+        <p class="hero-sub">Thanks for reaching out — here's what we got. We'll be in touch using the method you chose below.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrapper">
+        <h2 class="a11y-hidden">Submission summary</h2>
+        <div id="submissionSummary"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrapper footer-grid">
+      <div class="footer-col">
+        <h3>Waypoint</h3>
+        <p>A field guide for the job search — prep, search, and connect, in three stops.</p>
+      </div>
+      <div class="footer-col">
+        <h3>On this site</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">1. Prep</a></li>
+          <li><a href="job-listings.html">2. Search</a></li>
+          <li><a href="resources.html">3. Connect</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-meta">
+        <p>&copy; <span id="currentyear"></span> Waypoint</p>
+        <p>Last updated <span id="lastmodified"></span></p>
+        <p class="attribution">Job listings courtesy of <a href="https://remotive.com" target="_blank" rel="noopener">Remotive</a>.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Built with semantic HTML, CSS, and JavaScript · responsive design</p>
+    </div>
+  </footer>
+</body>
+</html>

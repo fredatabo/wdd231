@@ -1,0 +1,684 @@
+/* =========================================================
+   WAYPOINT — a field guide for the job search
+   Design tokens
+   ========================================================= */
+:root {
+  /* color */
+  --paper: #EFEEE4;       /* misty parchment background */
+  --paper-dim: #E5E3D5;   /* recessed panels */
+  --ink: #1E2B23;         /* deep pine — primary text */
+  --pine: #2F4A3B;        /* dark green — headers, nav */
+  --pine-light: #3F5F4C;
+  --ochre: #C4922F;       /* trail-blaze — accent / CTA */
+  --ochre-dark: #A5761F;
+  --trail-blue: #2E6E86;  /* wayfinding blue — links */
+  --rust: #A6482F;        /* sparing use — tags, alerts */
+  --line: #C9C4AE;        /* hairline borders on paper */
+  --white: #FBFAF6;
+
+  /* type */
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Work Sans", -apple-system, Segoe UI, sans-serif;
+  --font-mono: "Space Mono", "Courier New", monospace;
+
+  --radius: 10px;
+  --shadow: 0 4px 14px rgba(30, 43, 35, 0.12);
+}
+
+/* =========================================================
+   RESET / BASE
+   ========================================================= */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.55;
+}
+img { max-width: 100%; display: block; }
+a { color: var(--trail-blue); }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-visible {
+  outline: 3px solid var(--ochre);
+  outline-offset: 2px;
+}
+.wrapper { width: 100%; max-width: 1140px; margin: 0 auto; padding: 0 1.25rem; }
+
+.a11y-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+h1, h2, h3 { font-family: var(--font-display); color: var(--pine); margin: 0 0 0.6rem; line-height: 1.15; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.15rem; }
+p { margin: 0 0 1rem; }
+
+.section { padding: 2.5rem 0; }
+.section-label {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.75rem;
+  color: var(--ochre-dark);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation: none !important; transition: none !important; }
+}
+
+/* =========================================================
+   SIGNATURE COMPONENT: the "trail sign" banner
+   An arrow-notched ribbon shape, used for the hero and for
+   labelling each numbered waypoint. This is the one
+   recognizable visual device the whole site is built around.
+   ========================================================= */
+.trailsign {
+  position: relative;
+  background: var(--pine);
+  color: var(--white);
+  padding: 0.55rem 2.4rem 0.55rem 1.1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  clip-path: polygon(0 0, calc(100% - 22px) 0, 100% 50%, calc(100% - 22px) 100%, 0 100%);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.trailsign .wp-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: var(--ochre);
+  color: var(--ink);
+  font-weight: 700;
+  font-family: var(--font-body);
+}
+
+/* =========================================================
+   HEADER / NAV
+   ========================================================= */
+header {
+  background: var(--pine);
+  color: var(--white);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: var(--white);
+}
+.brand-mark { width: 30px; height: 30px; flex-shrink: 0; }
+.brand-mark svg { width: 100%; height: 100%; }
+.brand-text {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+  line-height: 1.1;
+  display: flex;
+  flex-direction: column;
+}
+.brand-sub {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ochre);
+  font-weight: 400;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 34px;
+  height: 34px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.hamburger span {
+  display: block;
+  height: 2px;
+  background: var(--white);
+  border-radius: 2px;
+}
+
+nav { width: 100%; }
+.menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 1rem 0 0.5rem;
+  display: none;
+  flex-direction: column;
+  gap: 0.25rem;
+  border-top: 1px solid rgba(255,255,255,0.18);
+}
+.menu-list.open { display: flex; }
+.menu-list a {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--white);
+  text-decoration: none;
+  padding: 0.55rem 0.3rem;
+  font-weight: 500;
+}
+.menu-list a .wp-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  border: 1.5px solid var(--ochre);
+  color: var(--ochre);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+}
+.menu-list a.is-current .wp-num {
+  background: var(--ochre);
+  color: var(--ink);
+}
+.menu-list a.is-current { color: var(--ochre); }
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero {
+  background: linear-gradient(180deg, var(--pine) 0%, var(--pine-light) 100%);
+  color: var(--white);
+  padding: 2rem 0 2.5rem;
+}
+.hero .trailsign { margin-bottom: 1rem; }
+.hero h1 { color: var(--white); font-size: 2.1rem; }
+.hero-sub { color: rgba(251,250,246,0.85); max-width: 46ch; font-size: 1.05rem; }
+
+/* =========================================================
+   BUTTONS / CTA
+   ========================================================= */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.3rem;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid transparent;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+}
+.btn-primary { background: var(--ochre); color: var(--ink); }
+.btn-primary:hover { background: var(--ochre-dark); }
+.btn-outline { background: transparent; border-color: var(--white); color: var(--white); }
+.btn-outline:hover { background: rgba(255,255,255,0.12); }
+.btn-ghost { background: transparent; border-color: var(--pine); color: var(--pine); }
+.btn-ghost:hover { background: var(--paper-dim); }
+
+/* =========================================================
+   PANELS / CARDS (shared)
+   ========================================================= */
+.panel {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* =========================================================
+   PAGE 1 — PREP (resume & interview tips)
+   ========================================================= */
+.checklist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+.checklist li {
+  display: flex;
+  gap: 0.7rem;
+  align-items: flex-start;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 0.85rem 1rem;
+}
+.checklist i { color: var(--trail-blue); margin-top: 0.2rem; }
+
+.qa-deck { display: grid; gap: 0.65rem; }
+.qa-deck details {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 0.15rem 1rem;
+}
+.qa-deck summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--pine);
+  padding: 0.8rem 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.qa-deck summary::-webkit-details-marker { display: none; }
+.qa-deck summary::after {
+  content: "+";
+  font-family: var(--font-mono);
+  color: var(--ochre-dark);
+  font-size: 1.1rem;
+}
+.qa-deck details[open] summary::after { content: "\2212"; }
+.qa-deck .qa-answer { padding: 0 0 1rem; color: var(--ink); }
+
+.notes-grid {
+  display: grid;
+  gap: 0.9rem;
+  grid-template-columns: 1fr;
+}
+.note-card {
+  background: var(--white);
+  border-left: 4px solid var(--ochre);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 0.9rem 1.1rem;
+  box-shadow: var(--shadow);
+}
+.note-card h3 { font-size: 1rem; margin-bottom: 0.3rem; }
+.note-card p { margin: 0; font-size: 0.93rem; }
+
+.cta-band {
+  background: var(--paper-dim);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  text-align: center;
+  padding: 2.25rem 0;
+}
+.cta-band p { max-width: 50ch; margin: 0 auto 1.1rem; }
+
+/* =========================================================
+   PAGE 2 — SEARCH (job listings)
+   ========================================================= */
+.search-panel {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.1rem;
+  display: grid;
+  gap: 0.75rem;
+  margin-top: -2.5rem;
+  position: relative;
+  z-index: 2;
+}
+.search-row { display: grid; gap: 0.6rem; grid-template-columns: 1fr; }
+.field { display: flex; flex-direction: column; gap: 0.3rem; }
+.field label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--pine);
+}
+.field input, .field select {
+  padding: 0.6rem 0.7rem;
+  border: 1.5px solid var(--line);
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  background: var(--paper);
+  color: var(--ink);
+}
+.search-actions { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+
+.results-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 1.5rem 0 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--pine-light);
+}
+
+.job-grid {
+  display: grid;
+  gap: 1.1rem;
+  grid-template-columns: 1fr;
+}
+.job-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+.job-card-top { display: flex; gap: 0.75rem; align-items: center; }
+.job-card-logo {
+  width: 46px;
+  height: 46px;
+  border-radius: 8px;
+  object-fit: contain;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  flex-shrink: 0;
+}
+.job-card-title { font-size: 1.05rem; margin: 0; }
+.job-card-company { font-size: 0.9rem; color: var(--pine-light); margin: 0; }
+.job-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.job-tag {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.25rem 0.55rem;
+  border-radius: 999px;
+  background: var(--paper-dim);
+  color: var(--pine);
+  border: 1px solid var(--line);
+}
+.job-tag.salary { background: #EAF2E9; color: var(--pine); border-color: #cfe0cd; }
+.job-card-desc { font-size: 0.9rem; color: var(--ink); flex: 1; }
+.job-card-actions { display: flex; justify-content: space-between; align-items: center; }
+.job-card-actions .btn { padding: 0.5rem 1rem; font-size: 0.85rem; }
+.job-source { font-family: var(--font-mono); font-size: 0.68rem; color: var(--pine-light); }
+
+.state-msg {
+  text-align: center;
+  padding: 2.5rem 1rem;
+  color: var(--pine-light);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+}
+.state-msg.error { color: var(--rust); }
+
+/* =========================================================
+   PAGE 3 — CONNECT (career resources & networking)
+   ========================================================= */
+.resource-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+.resource-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.1rem;
+}
+.resource-card h3 { display: flex; align-items: center; gap: 0.5rem; }
+.resource-card h3 i { color: var(--ochre-dark); }
+.resource-card a.ext-link {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.marker-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.75rem; }
+.marker-list li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.75rem;
+  align-items: start;
+}
+.marker-list .marker-dist {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--white);
+  background: var(--trail-blue);
+  border-radius: 999px;
+  padding: 0.2rem 0.55rem;
+  white-space: nowrap;
+  align-self: center;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+footer {
+  background: var(--ink);
+  color: var(--paper);
+  margin-top: 3rem;
+}
+.footer-grid {
+  display: grid;
+  gap: 1.75rem;
+  padding: 2.5rem 0 1.5rem;
+  grid-template-columns: 1fr;
+}
+.footer-grid h3 { color: var(--white); font-size: 1rem; }
+.footer-grid p, .footer-links a { color: rgba(251,250,246,0.75); font-size: 0.88rem; }
+.footer-links { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.4rem; }
+.footer-links a { text-decoration: none; }
+.footer-links a:hover { color: var(--ochre); }
+.footer-meta p { margin: 0 0 0.3rem; }
+.attribution a { color: var(--ochre); }
+.footer-bottom {
+  border-top: 1px solid rgba(251,250,246,0.15);
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.78rem;
+  color: rgba(251,250,246,0.55);
+}
+
+/* =========================================================
+   JOB CARD: save (bookmark) button + "view details" trigger
+   ========================================================= */
+.job-card-top { position: relative; }
+.save-btn {
+  margin-left: auto;
+  background: transparent;
+  border: 1.5px solid var(--line);
+  border-radius: 999px;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--pine-light);
+  flex-shrink: 0;
+}
+.save-btn[aria-pressed="true"] {
+  background: var(--ochre);
+  border-color: var(--ochre);
+  color: var(--ink);
+}
+.job-card-title-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+}
+.job-card-title-btn:hover .job-card-title { text-decoration: underline; }
+
+.saved-toggle-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--pine-light);
+}
+.saved-toggle-row input { width: 16px; height: 16px; }
+
+/* =========================================================
+   MODAL DIALOG (native <dialog>)
+   ========================================================= */
+dialog.job-modal {
+  border: none;
+  border-radius: var(--radius);
+  padding: 0;
+  max-width: 560px;
+  width: calc(100% - 2.5rem);
+  color: var(--ink);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+}
+dialog.job-modal::backdrop {
+  background: rgba(30, 43, 35, 0.55);
+}
+.modal-header {
+  background: var(--pine);
+  color: var(--white);
+  padding: 1rem 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.modal-header h2 { color: var(--white); margin: 0; font-size: 1.2rem; }
+.modal-close {
+  background: transparent;
+  border: none;
+  color: var(--white);
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0.2rem;
+}
+.modal-body { padding: 1.2rem; max-height: 60vh; overflow-y: auto; }
+.modal-body .job-tags { margin-bottom: 0.9rem; }
+.modal-footer {
+  padding: 1rem 1.2rem;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* =========================================================
+   FORM (contact page)
+   ========================================================= */
+.form-panel {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  display: grid;
+  gap: 1rem;
+  max-width: 640px;
+}
+.form-panel .field input,
+.form-panel .field select,
+.form-panel .field textarea {
+  padding: 0.65rem 0.75rem;
+  border: 1.5px solid var(--line);
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  background: var(--paper);
+  color: var(--ink);
+  width: 100%;
+}
+.form-panel .field textarea { resize: vertical; min-height: 110px; }
+.form-panel .field-hint { font-size: 0.8rem; color: var(--pine-light); margin-top: 0.2rem; }
+.form-panel fieldset { border: 1.5px solid var(--line); border-radius: 8px; padding: 0.8rem 1rem; }
+.form-panel legend { font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--pine); padding: 0 0.4rem; }
+.radio-row { display: flex; gap: 1.2rem; flex-wrap: wrap; margin-top: 0.4rem; }
+.radio-row label { display: flex; align-items: center; gap: 0.4rem; font-size: 0.92rem; }
+
+/* =========================================================
+   THANK-YOU (form action) SUMMARY
+   ========================================================= */
+.summary-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.summary-table th, .summary-table td {
+  text-align: left;
+  padding: 0.7rem 1rem;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.92rem;
+}
+.summary-table th { width: 40%; font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; color: var(--pine); background: var(--paper-dim); }
+.summary-table tr:last-child th, .summary-table tr:last-child td { border-bottom: none; }
+
+@media (min-width: 641px) {
+  .modal-body { max-height: 55vh; }
+}
+
+@media (min-width: 641px) {
+  .wrapper { padding: 0 2rem; }
+  h1 { font-size: 2.6rem; }
+  .hero h1 { font-size: 2.8rem; }
+  .hamburger { display: none; }
+  .nav-wrapper { align-items: center; }
+  nav { width: auto; }
+  .menu-list {
+    display: flex !important;
+    flex-direction: row;
+    border-top: none;
+    padding: 0;
+    gap: 0.5rem;
+  }
+  .menu-list a { padding: 0.5rem 0.7rem; border-radius: 999px; }
+  .menu-list a.is-current { background: rgba(255,255,255,0.1); }
+
+  .notes-grid { grid-template-columns: 1fr 1fr; }
+  .search-row { grid-template-columns: 2fr 1.2fr auto; align-items: end; }
+  .job-grid { grid-template-columns: 1fr 1fr; }
+  .resource-grid { grid-template-columns: 1fr 1fr; }
+  .footer-grid { grid-template-columns: 1.2fr 1fr 1fr; }
+
+  /* hover interaction on job cards, medium screens and up only */
+  .job-card { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+  .job-card:hover { transform: translateY(-3px); box-shadow: 0 10px 22px rgba(30,43,35,0.16); }
+}
+
+/* =========================================================
+   LARGE SCREENS — 1025px and up
+   ========================================================= */
+@media (min-width: 1025px) {
+  .job-grid { grid-template-columns: repeat(3, 1fr); }
+  .resource-grid { grid-template-columns: repeat(3, 1fr); }
+  .hero-inner { display: flex; justify-content: space-between; align-items: flex-end; gap: 2rem; }
+}
