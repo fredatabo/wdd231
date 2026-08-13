@@ -50,8 +50,8 @@ export function buildCardHtml(job, saved) {
       <div class="job-tags">${buildTagsHtml(job)}</div>
       <p class="job-card-desc">${escapeHtml(description)}</p>
       <div class="job-card-actions">
-        <button type="button" class="btn btn-ghost" data-action="open-modal" data-job-id="${job.id}">Details</button>
-        <a class="btn btn-primary" href="${escapeAttr(job.url)}" target="_blank" rel="noopener">View &amp; Apply</a>
+        <button type="button" class="wp-btn wp-btn-ghost" data-action="open-modal" data-job-id="${job.id}">Details</button>
+        <a class="wp-btn wp-btn-primary" href="${escapeAttr(job.url)}" target="_blank" rel="noopener">View &amp; Apply</a>
       </div>
     </article>
   `;
@@ -60,18 +60,18 @@ export function buildCardHtml(job, saved) {
 export function buildModalHtml(job) {
   const jobType = job.job_type ? job.job_type.replace(/_/g, ' ') : '';
   return `
-    <div class="modal-header">
+    <div class="wp-modal-header">
       <h2>${escapeHtml(job.title)}</h2>
-      <button type="button" class="modal-close" data-action="close-modal" aria-label="Close">&times;</button>
+      <button type="button" class="wp-modal-close" data-action="close-modal" aria-label="Close">&times;</button>
     </div>
-    <div class="modal-body">
+    <div class="wp-modal-body">
       <p class="job-card-company">${escapeHtml(job.company_name)}${jobType ? ' &middot; ' + escapeHtml(jobType) : ''}</p>
       <div class="job-tags">${buildTagsHtml(job)}</div>
       <div>${sanitizeDescription(job.description)}</div>
     </div>
-    <div class="modal-footer">
+    <div class="wp-modal-footer">
       <span class="job-source">via Remotive</span>
-      <a class="btn btn-primary" href="${escapeAttr(job.url)}" target="_blank" rel="noopener">View &amp; Apply</a>
+      <a class="wp-btn wp-btn-primary" href="${escapeAttr(job.url)}" target="_blank" rel="noopener">View &amp; Apply</a>
     </div>
   `;
 }

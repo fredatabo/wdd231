@@ -55,13 +55,16 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   border: 0;
 }
 
-h1, h2, h3 { font-family: var(--font-display); color: var(--pine); margin: 0 0 0.6rem; line-height: 1.15; }
-h1 { font-size: 2rem; }
-h2 { font-size: 1.5rem; }
-h3 { font-size: 1.15rem; }
+h1 { font-family: var(--font-display); color: var(--pine); margin: 0 0 0.6rem; line-height: 1.15; font-size: 2rem; }
+h2 { font-family: var(--font-display); color: var(--pine); margin: 0 0 0.6rem; line-height: 1.15; font-size: 1.5rem; }
+h3 { font-family: var(--font-display); color: var(--pine); margin: 0 0 0.6rem; line-height: 1.15; font-size: 1.15rem; }
 p { margin: 0 0 1rem; }
 
 .section { padding: 2.5rem 0; }
+.section-alt { background: var(--paper-dim); }
+.wp-num-dark { background: var(--ink); color: var(--white); }
+.marker-title { margin-bottom: 0.15rem; }
+.marker-text { margin: 0; }
 .section-label {
   font-family: var(--font-mono);
   text-transform: uppercase;
@@ -226,7 +229,7 @@ nav { width: 100%; }
 /* =========================================================
    BUTTONS / CTA
    ========================================================= */
-.btn {
+.wp-btn {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -239,12 +242,12 @@ nav { width: 100%; }
   font-family: var(--font-body);
   font-size: 0.95rem;
 }
-.btn-primary { background: var(--ochre); color: var(--ink); }
-.btn-primary:hover { background: var(--ochre-dark); }
-.btn-outline { background: transparent; border-color: var(--white); color: var(--white); }
-.btn-outline:hover { background: rgba(255,255,255,0.12); }
-.btn-ghost { background: transparent; border-color: var(--pine); color: var(--pine); }
-.btn-ghost:hover { background: var(--paper-dim); }
+.wp-btn-primary { background: var(--ochre); color: var(--ink); }
+.wp-btn-primary:hover { background: var(--ochre-dark); }
+.wp-btn-outline { background: transparent; border-color: var(--white); color: var(--white); }
+.wp-btn-outline:hover { background: rgba(255,255,255,0.12); }
+.wp-btn-ghost { background: transparent; border-color: var(--pine); color: var(--pine); }
+.wp-btn-ghost:hover { background: var(--paper-dim); }
 
 /* =========================================================
    PANELS / CARDS (shared)
@@ -418,7 +421,7 @@ nav { width: 100%; }
 .job-tag.salary { background: #EAF2E9; color: var(--pine); border-color: #cfe0cd; }
 .job-card-desc { font-size: 0.9rem; color: var(--ink); flex: 1; }
 .job-card-actions { display: flex; justify-content: space-between; align-items: center; }
-.job-card-actions .btn { padding: 0.5rem 1rem; font-size: 0.85rem; }
+.job-card-actions .wp-btn { padding: 0.5rem 1rem; font-size: 0.85rem; }
 .job-source { font-family: var(--font-mono); font-size: 0.68rem; color: var(--pine-light); }
 
 .state-msg {
@@ -429,6 +432,7 @@ nav { width: 100%; }
   font-size: 0.9rem;
 }
 .state-msg.error { color: var(--rust); }
+.state-msg-action { text-align: center; }
 
 /* =========================================================
    PAGE 3 — CONNECT (career resources & networking)
@@ -488,9 +492,9 @@ footer {
   grid-template-columns: 1fr;
 }
 .footer-grid h3 { color: var(--white); font-size: 1rem; }
-.footer-grid p, .footer-links a { color: rgba(251,250,246,0.75); font-size: 0.88rem; }
+.footer-grid p { color: rgba(251,250,246,0.75); font-size: 0.88rem; }
 .footer-links { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.4rem; }
-.footer-links a { text-decoration: none; }
+.footer-links a { color: rgba(251,250,246,0.75); font-size: 0.88rem; text-decoration: none; }
 .footer-links a:hover { color: var(--ochre); }
 .footer-meta p { margin: 0 0 0.3rem; }
 .attribution a { color: var(--ochre); }
@@ -560,7 +564,7 @@ dialog.job-modal {
 dialog.job-modal::backdrop {
   background: rgba(30, 43, 35, 0.55);
 }
-.modal-header {
+.wp-modal-header {
   background: var(--pine);
   color: var(--white);
   padding: 1rem 1.2rem;
@@ -569,8 +573,8 @@ dialog.job-modal::backdrop {
   align-items: flex-start;
   gap: 1rem;
 }
-.modal-header h2 { color: var(--white); margin: 0; font-size: 1.2rem; }
-.modal-close {
+.wp-modal-header h2 { color: var(--white); margin: 0; font-size: 1.2rem; }
+.wp-modal-close {
   background: transparent;
   border: none;
   color: var(--white);
@@ -579,9 +583,9 @@ dialog.job-modal::backdrop {
   cursor: pointer;
   padding: 0.2rem;
 }
-.modal-body { padding: 1.2rem; max-height: 60vh; overflow-y: auto; }
-.modal-body .job-tags { margin-bottom: 0.9rem; }
-.modal-footer {
+.wp-modal-body { padding: 1.2rem; max-height: 60vh; overflow-y: auto; }
+.wp-modal-body .job-tags { margin-bottom: 0.9rem; }
+.wp-modal-footer {
   padding: 1rem 1.2rem;
   border-top: 1px solid var(--line);
   display: flex;
@@ -604,8 +608,7 @@ dialog.job-modal::backdrop {
   max-width: 640px;
 }
 .form-panel .field input,
-.form-panel .field select,
-.form-panel .field textarea {
+.form-panel .field select {
   padding: 0.65rem 0.75rem;
   border: 1.5px solid var(--line);
   border-radius: 8px;
@@ -615,7 +618,18 @@ dialog.job-modal::backdrop {
   color: var(--ink);
   width: 100%;
 }
-.form-panel .field textarea { resize: vertical; min-height: 110px; }
+.form-panel .field textarea {
+  padding: 0.65rem 0.75rem;
+  border: 1.5px solid var(--line);
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  background: var(--paper);
+  color: var(--ink);
+  width: 100%;
+  resize: vertical;
+  min-height: 110px;
+}
 .form-panel .field-hint { font-size: 0.8rem; color: var(--pine-light); margin-top: 0.2rem; }
 .form-panel fieldset { border: 1.5px solid var(--line); border-radius: 8px; padding: 0.8rem 1rem; }
 .form-panel legend { font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--pine); padding: 0 0.4rem; }
@@ -633,17 +647,27 @@ dialog.job-modal::backdrop {
   border-radius: var(--radius);
   overflow: hidden;
 }
-.summary-table th, .summary-table td {
+.summary-table td {
   text-align: left;
   padding: 0.7rem 1rem;
   border-bottom: 1px solid var(--line);
   font-size: 0.92rem;
 }
-.summary-table th { width: 40%; font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; color: var(--pine); background: var(--paper-dim); }
+.summary-table th {
+  text-align: left;
+  padding: 0.7rem 1rem;
+  border-bottom: 1px solid var(--line);
+  width: 40%;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--pine);
+  background: var(--paper-dim);
+}
 .summary-table tr:last-child th, .summary-table tr:last-child td { border-bottom: none; }
 
 @media (min-width: 641px) {
-  .modal-body { max-height: 55vh; }
+  .wp-modal-body { max-height: 55vh; }
 }
 
 @media (min-width: 641px) {

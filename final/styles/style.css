@@ -564,7 +564,7 @@ dialog.job-modal {
 dialog.job-modal::backdrop {
   background: rgba(30, 43, 35, 0.55);
 }
-.modal-header {
+.wp-modal-header {
   background: var(--pine);
   color: var(--white);
   padding: 1rem 1.2rem;
@@ -573,8 +573,8 @@ dialog.job-modal::backdrop {
   align-items: flex-start;
   gap: 1rem;
 }
-.modal-header h2 { color: var(--white); margin: 0; font-size: 1.2rem; }
-.modal-close {
+.wp-modal-header h2 { color: var(--white); margin: 0; font-size: 1.2rem; }
+.wp-modal-close {
   background: transparent;
   border: none;
   color: var(--white);
@@ -583,9 +583,9 @@ dialog.job-modal::backdrop {
   cursor: pointer;
   padding: 0.2rem;
 }
-.modal-body { padding: 1.2rem; max-height: 60vh; overflow-y: auto; }
-.modal-body .job-tags { margin-bottom: 0.9rem; }
-.modal-footer {
+.wp-modal-body { padding: 1.2rem; max-height: 60vh; overflow-y: auto; }
+.wp-modal-body .job-tags { margin-bottom: 0.9rem; }
+.wp-modal-footer {
   padding: 1rem 1.2rem;
   border-top: 1px solid var(--line);
   display: flex;
@@ -667,7 +667,7 @@ dialog.job-modal::backdrop {
 .summary-table tr:last-child th, .summary-table tr:last-child td { border-bottom: none; }
 
 @media (min-width: 641px) {
-  .modal-body { max-height: 55vh; }
+  .wp-modal-body { max-height: 55vh; }
 }
 
 @media (min-width: 641px) {

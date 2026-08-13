@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function () {
       metaEl.textContent = '';
       resultsEl.innerHTML =
         '<p class="state-msg error">Couldn\'t reach Remotive right now. Check your connection and try again.</p>' +
-        '<div style="text-align:center;"><button type="button" class="btn btn-ghost" id="retryLoad">Retry</button></div>';
+        '<div class="state-msg-action"><button type="button" class="wp-btn wp-btn-ghost" id="retryLoad">Retry</button></div>';
       const retryBtn = document.getElementById('retryLoad');
       if (retryBtn) retryBtn.addEventListener('click', loadJobs);
       return;
