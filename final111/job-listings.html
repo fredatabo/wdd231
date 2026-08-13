@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Waypoint | Message Received</title>
-  <meta name="description" content="Confirmation page showing the details you submitted through the Waypoint contact form.">
+  <title>Waypoint | Search — Job Listings</title>
+  <meta name="description" content="Browse live remote job openings pulled from the Remotive API. Filter by keyword and category.">
   <meta name="author" content="Waypoint">
 
   <link rel="icon" href="images/favicon.ico" sizes="any">
@@ -12,10 +12,10 @@
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Waypoint | Message Received">
-  <meta property="og:description" content="Confirmation page showing the details you submitted through the Waypoint contact form.">
-  <meta property="og:image" content="https://example.com/waypoint/images/og-banner.png">
-  <meta property="og:url" content="https://example.com/waypoint/thankyou.html">
+  <meta property="og:title" content="Waypoint | Search — Job Listings">
+  <meta property="og:description" content="Browse live remote job openings pulled from the Remotive API. Filter by keyword and category.">
+  <meta property="og:image" content="images/og-banner.png">
+  <meta property="og:url" content="https://example.com/waypoint/job-listings.html">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,7 +23,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="styles/style.css">
 
-  <script type="module" src="scripts/app-thankyou.mjs"></script>
+  <script type="module" src="scripts/app-jobs.mjs"></script>
 </head>
 <body>
   <header>
@@ -46,7 +46,7 @@
       <nav aria-label="Main navigation">
         <ul class="menu-list" id="menuList">
           <li><a href="index.html"><span class="wp-num">1</span> Prep</a></li>
-          <li><a href="job-listings.html"><span class="wp-num">2</span> Search</a></li>
+          <li><a href="job-listings.html" class="is-current"><span class="wp-num">2</span> Search</a></li>
           <li><a href="resources.html"><span class="wp-num">3</span> Connect</a></li>
         </ul>
       </nav>
@@ -56,19 +56,52 @@
   <main>
     <section class="hero">
       <div class="wrapper">
-        <span class="trailsign">Trailhead</span>
-        <h1>Message received</h1>
-        <p class="hero-sub">Thanks for reaching out — here's what we got. We'll be in touch using the method you chose below.</p>
+        <span class="trailsign"><span class="wp-num">2</span> Waypoint two: Search</span>
+        <h1>Live openings, pulled in real time</h1>
+        <p class="hero-sub">These listings come straight from Remotive's public job board API. Search by keyword or narrow it down by category.</p>
       </div>
     </section>
 
+    <div class="wrapper">
+      <form class="search-panel" id="jobFilterForm">
+        <div class="search-row">
+          <div class="field">
+            <label for="jobSearch">Keyword</label>
+            <input type="text" id="jobSearch" name="jobSearch" placeholder="e.g. frontend, marketing, data analyst" autocomplete="off">
+          </div>
+          <div class="field">
+            <label for="jobCategory">Category</label>
+            <select id="jobCategory" name="jobCategory">
+              <option value="">All categories</option>
+            </select>
+          </div>
+          <div class="search-actions">
+            <button type="submit" class="btn btn-primary"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i> Search</button>
+            <button type="button" class="btn btn-ghost" id="resetFilters">Reset</button>
+          </div>
+        </div>
+        <div class="saved-toggle-row">
+          <input type="checkbox" id="savedOnly" name="savedOnly">
+          <label for="savedOnly"><i class="fa-solid fa-bookmark" aria-hidden="true"></i> Show saved roles only</label>
+        </div>
+      </form>
+    </div>
+
     <section class="section">
       <div class="wrapper">
-        <h2 class="a11y-hidden">Submission summary</h2>
-        <div id="submissionSummary"></div>
+        <span class="section-label">Open Roles</span>
+        <h2 class="a11y-hidden">Job listings</h2>
+        <p class="results-meta" id="resultsMeta"></p>
+        <div class="job-grid" id="jobResults" aria-live="polite">
+          <p class="state-msg">Fetching current listings from Remotive&hellip;</p>
+        </div>
       </div>
     </section>
   </main>
+
+  <dialog id="jobModal" class="job-modal" aria-labelledby="jobModalHeading">
+    <div id="jobModalBody"></div>
+  </dialog>
 
   <footer>
     <div class="wrapper footer-grid">

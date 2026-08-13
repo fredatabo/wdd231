@@ -50,8 +50,8 @@ export function buildCardHtml(job, saved) {
       <div class="job-tags">${buildTagsHtml(job)}</div>
       <p class="job-card-desc">${escapeHtml(description)}</p>
       <div class="job-card-actions">
-        <button type="button" class="wp-btn wp-btn-ghost" data-action="open-modal" data-job-id="${job.id}">Details</button>
-        <a class="wp-btn wp-btn-primary" href="${escapeAttr(job.url)}" target="_blank" rel="noopener">View &amp; Apply</a>
+        <button type="button" class="btn btn-ghost" data-action="open-modal" data-job-id="${job.id}">Details</button>
+        <a class="btn btn-primary" href="${escapeAttr(job.url)}" target="_blank" rel="noopener">View &amp; Apply</a>
       </div>
     </article>
   `;
@@ -71,7 +71,7 @@ export function buildModalHtml(job) {
     </div>
     <div class="modal-footer">
       <span class="job-source">via Remotive</span>
-      <a class="wp-btn wp-btn-primary" href="${escapeAttr(job.url)}" target="_blank" rel="noopener">View &amp; Apply</a>
+      <a class="btn btn-primary" href="${escapeAttr(job.url)}" target="_blank" rel="noopener">View &amp; Apply</a>
     </div>
   `;
 }

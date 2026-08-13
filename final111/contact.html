@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Waypoint | Message Received</title>
-  <meta name="description" content="Confirmation page showing the details you submitted through the Waypoint contact form.">
+  <title>Waypoint | Contact</title>
+  <meta name="description" content="Get in touch with Waypoint for resume feedback, interview practice, or a general question.">
   <meta name="author" content="Waypoint">
 
   <link rel="icon" href="images/favicon.ico" sizes="any">
@@ -12,10 +12,10 @@
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Waypoint | Message Received">
-  <meta property="og:description" content="Confirmation page showing the details you submitted through the Waypoint contact form.">
-  <meta property="og:image" content="https://example.com/waypoint/images/og-banner.png">
-  <meta property="og:url" content="https://example.com/waypoint/thankyou.html">
+  <meta property="og:title" content="Waypoint | Contact">
+  <meta property="og:description" content="Get in touch with Waypoint for resume feedback, interview practice, or a general question.">
+  <meta property="og:image" content="images/og-banner.png">
+  <meta property="og:url" content="https://example.com/waypoint/contact.html">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,7 +23,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="styles/style.css">
 
-  <script type="module" src="scripts/app-thankyou.mjs"></script>
+  <script type="module" src="scripts/app-contact.mjs"></script>
 </head>
 <body>
   <header>
@@ -57,15 +57,56 @@
     <section class="hero">
       <div class="wrapper">
         <span class="trailsign">Trailhead</span>
-        <h1>Message received</h1>
-        <p class="hero-sub">Thanks for reaching out — here's what we got. We'll be in touch using the method you chose below.</p>
+        <h1>Send a message</h1>
+        <p class="hero-sub">Questions about a role, want a resume look-over, or just want to say the trail markers helped? This goes straight to us.</p>
       </div>
     </section>
 
     <section class="section">
       <div class="wrapper">
-        <h2 class="a11y-hidden">Submission summary</h2>
-        <div id="submissionSummary"></div>
+        <h2 class="a11y-hidden">Contact form</h2>
+        <form class="form-panel" action="thankyou.html" method="get">
+          <div class="field">
+            <label for="name">Full name</label>
+            <input type="text" id="name" name="name" required autocomplete="name">
+          </div>
+
+          <div class="field">
+            <label for="email">Email address</label>
+            <input type="email" id="email" name="email" required autocomplete="email">
+            <span class="field-hint">We'll only use this to reply to your message.</span>
+          </div>
+
+          <div class="field">
+            <label for="reason">Reason for reaching out</label>
+            <select id="reason" name="reason" required>
+              <option value="">Choose one&hellip;</option>
+              <option value="Resume review">Resume review</option>
+              <option value="Interview practice">Interview practice</option>
+              <option value="Site feedback">Site feedback</option>
+              <option value="General question">General question</option>
+            </select>
+          </div>
+
+          <fieldset>
+            <legend>Preferred contact method</legend>
+            <div class="radio-row">
+              <label><input type="radio" name="contactMethod" value="Email" checked> Email</label>
+              <label><input type="radio" name="contactMethod" value="Phone"> Phone</label>
+            </div>
+          </fieldset>
+
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required minlength="10" placeholder="Tell us a bit about what you need&hellip;"></textarea>
+          </div>
+
+          <div class="field">
+            <label><input type="checkbox" name="jobAlerts"> Send me a weekly digest of new remote listings</label>
+          </div>
+
+          <button type="submit" class="btn btn-primary"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Send message</button>
+        </form>
       </div>
     </section>
   </main>
